@@ -1,0 +1,2 @@
+module MinutemeetingsHelper
+end

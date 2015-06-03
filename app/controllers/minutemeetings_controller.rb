@@ -1,0 +1,2 @@
+class MinutemeetingsController < ApplicationController
+end

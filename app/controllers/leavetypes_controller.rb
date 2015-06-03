@@ -1,0 +1,2 @@
+class LeavetypesController < ApplicationController
+end

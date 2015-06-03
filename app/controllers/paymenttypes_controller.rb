@@ -1,0 +1,2 @@
+class PaymenttypesController < ApplicationController
+end

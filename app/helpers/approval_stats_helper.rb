@@ -1,0 +1,2 @@
+module ApprovalStatsHelper
+end
