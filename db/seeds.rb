@@ -5,3 +5,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Issuestat.create([{ status: 'Pending' }, { status: 'Resolved' }, { status: 'Active' }])

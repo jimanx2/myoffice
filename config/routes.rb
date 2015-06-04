@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   resources :pages
   root to: 'administrator#index'
+  
   resources :issues
+  post 'issues/newissue' => 'issues#create'
+  post 'issues/:id/edit' => 'issues#update'
+  
   resources :employees
   resources :departments
   resources :positions
