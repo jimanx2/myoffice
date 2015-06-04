@@ -45,3 +45,4 @@ end
 
 gem 'devise'
 gem 'activeadmin' , github:'activeadmin'
+gem 'rack-raw-upload'

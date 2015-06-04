@@ -1,6 +1,6 @@
 class EmployeesController < ApplicationController
-    
-    def index
+  layout 'administrator'
+  def index
         @employees = Employee.all
         
         respond_to do |format| 
