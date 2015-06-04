@@ -1,0 +1,32 @@
+<h1>Create New Leavetype: </h1>
+<hr>
+<div class="row">
+<form action="/leavetypes/new"
+      method="post" id="new_form">
+    <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
+    
+    <div class="form-group">
+        <label class="col-md-4">Name</label>
+        <div class="col-md-8">
+        <input type="text" name="name"
+            class="form-control"
+            />
+    </div>
+    
+    <div class="action">
+        <a href="#" class="btn btn-success" id="btnSubmit">Submit</a>
+        <a href="/leavetypes" class="btn btn-danger">Cancel</a>
+        
+    </div>
+</form>
+</div>
+    
+<% content_for :js do %>
+<script type="text/javascript">
+    $('#btnSubmit').click(function(){
+        $('#new_form').submit();
+    });
+</script>
+<% end %>
+    
+    

@@ -1,0 +1,56 @@
+<h1>Leavetypes Listing</h1>
+<%= messages =  flash.each.map do |msg| 
+    msg[1] 
+end
+raw messages.join('<br/>') 
+%>
+
+<span class="pull-right">
+    <a class="btn btn-warning"
+       href="/leavetypes/new">
+        
+        Create new leavetype
+    </a>
+</span>
+
+<table class= "table table-striped" border="0">
+<thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Action</th>
+    </tr>
+</thead>
+    
+    <tbody>
+         <!-- we'll use .each to iterate each leave -->
+        <% @leavetypes.each do |leavetype| %>
+    <tr>
+        <td><%= leavetype.id %></td>
+        <td><%= leavetype.name %></td>
+        <td>
+            <a class="btn btn-info"           href="/leavetypes/<%= leavetype.id %>">
+            View
+            </a>
+            <a class="btn btn-success" href="/leavetypes/<%= leavetype.id %>/edit">
+            
+            Edit
+            </a>
+            
+            <%= link_to 'Remove', leavetype, 
+                        method: :delete,
+                        class: "btn btn-danger",
+                        data: { confirm: 'Are you sure?'}    
+            %>
+            
+            
+         
+  
+            
+        </td>
+    </tr>
+    <% end %>
+    </tbody>
+</table>
+    
+    
