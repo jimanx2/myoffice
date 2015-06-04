@@ -9,7 +9,7 @@
     <%= csrf_meta_tag %>
     <!-- /meta -->
 
-    <title>Cameo | Responsive Admin Dashboard</title>
+    <title>i-Office | Ruby on Rails</title>
 
     <%= stylesheet_link_tag "administrator" %>
     <%= yield :css %>
@@ -32,262 +32,28 @@
         <header class="header header-fixed navbar">
 
             <div class="brand">
-                <a href="javascript:;" class="fa fa-bars off-left visible-xs" data-toggle="off-canvas" data-move="ltr"></a>
 
-                <a href="index.html" class="navbar-brand">
-                    <i class="fa fa-stop mg-r-sm"></i>
+                <a href="#" class="navbar-brand">
                     <span class="heading-font">
-                        Cameo<b>ADMIN</b> 
+                        NETCENTRIC<b> ADMIN</b> 
                     </span>
                 </a>
             </div>
+          <div class="brand" align="right">
 
-            <form class="navbar-form navbar-left hidden-xs" role="search">
-                <div class="form-group">
-                    <button class="btn no-border no-margin bg-none no-pd-l" type="submit">
-                        <i class="fa fa-search"></i>
-                    </button>
-                    <input type="text" class="form-control no-border no-padding search" placeholder="Search Workspace">
-                </div>
-            </form>
-
-            <ul class="nav navbar-nav navbar-right off-right">
-                <li class="hidden-xs">
-                    <a href="javascript:;">
-                        +Gerald Theodore Morris
-                    </a>
-                </li>
-
-                <li class="notifications dropdown hidden-xs">
-                    <a href="javascript:;" data-toggle="dropdown">
-                        <i class="fa fa-bell"></i>
-                        <div class="badge badge-top bg-danger animated flash">3</div>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right animated slideInRight">
-                        <div class="panel bg-white no-border no-margin">
-                            <div class="panel-heading no-radius">
-                                <small>
-                                    <b>Notifications</b>
-                                </small>
-                                <small class="pull-right">
-                                    <a href="javascript:;" class="mg-r-xs">mark as read</a>&#8226;
-                                    <a href="javascript:;" class="fa fa-cog mg-l-xs"></a>
-                                </small>
-                            </div>
-
-                            <ul class="list-group">
-                                <li class="list-group-item">
-                                    <a href="javascript:;">
-                                        <span class="pull-left mg-t-xs mg-r-md">
-                                            <img src="<%= asset_path('img/faceless.jpg') %>" class="avatar avatar-sm img-circle" alt="">
-                                        </span>
-                                        <div class="m-body show pd-t-xs">
-                                            <span>Dean Winchester</span>
-                                            <span>Posted on to your wall</span>
-                                            <small>2 mins ago</small>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a href="javascript:;">
-                                        <span class="pull-left mg-t-xs mg-r-md">
-                                            <span class="fa-stack fa-lg">
-                                                <i class="fa fa-circle fa-stack-2x text-warning"></i>
-                                                <i class="fa fa-download fa-stack-1x fa-inverse"></i>
-                                            </span>
-                                        </span>
-                                        <div class="m-body show pd-t-xs">
-                                            <span>145 MB download in progress.</span>
-                                            <div class="progress progress-xs mg-t-xs mg-b-xs">
-                                                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                                </div>
-                                            </div>
-                                            <small>Started 23 mins ago</small>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a href="javascript:;">
-                                        <span class="pull-left mg-t-xs mg-r-md">
-                                            <img src="<%= asset_path('img/faceless.jpg') %>" class="avatar avatar-sm img-circle" alt="">
-                                        </span>
-                                        <div class="m-body show pd-t-xs">
-                                            <span>Application</span>
-                                            <span>Where is my workspace widget</span>
-                                            <small>5 days ago</small>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <div class="panel-footer no-border">
-                                <a href="javascript:;">See all notifications</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="quickmenu">
-                    <a href="javascript:;" data-toggle="dropdown">
-                        <img src="<%= asset_path('img/faceless.jpg') %>" class="avatar pull-left img-circle" alt="user" title="user">
-                        <i class="caret mg-l-xs hidden-xs no-margin"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-right mg-r-xs">
-                        <li>
-                            <a href="javascript:;">
-                                <div class="pd-t-sm">
-                                    gerald@morris.com
-                                    <br>
-                                    <small class="text-muted">4.2 MB of 51.25 GB used</small>
-                                </div>
-                                <div class="progress progress-xs no-radius no-margin mg-b-sm">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="profile.html">Settings</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;">Upgrade</a>
-                        </li>
-                        <li>
-                            <a href="javascript:;">Notifications
-                                <div class="badge bg-danger pull-right">3</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;">Help ?</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="signin.html">Logout</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+                <a href="#" class="navbar-brand">
+                    <span class="heading-font">
+                        <b>LOGIN</b> 
+                    </span>
+                </a>
+            </div>
         </header>
         <!-- /top header -->
 
         <section class="layout">
 
             <!-- chat panel -->
-            <aside class="chat-sidebar canvas-right pull-right">
-                <div class="slimscroll" data-height="auto" data-size="6px" data-distance="0">
-
-                    <div class="row text-white pd-md">
-                        <div class="col-xs-8">
-                            <p class="mg-t-xs">Mute notifications</p>
-                        </div>
-                        <div class="col-xs-4">
-                            <input type="checkbox" class="js-switch" checked />
-                        </div>
-                    </div>
-
-                    <b class="center-block text-white pd-md">
-                        Activity feed
-                    </b>
-
-                    <div class="pd-md">
-                        <a href="javascript:;" class="pull-left mg-r-md">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x text-warning"></i>
-                                <i class="fa fa-download fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                        Rose Fournier
-                        <small>Posted on to your wall</small><br>
-                        <small>2 mins ago</small>
-                    </div>
-
-                    <div class="pd-md">
-                        <a href="javascript:;" class="pull-left mg-r-md">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x text-danger"></i>
-                                <i class="fa fa-download fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                        Liviu Cîndea
-                        <small>Shared a photo with you.</small><br>
-                        <small>13 mins ago</small>
-                    </div>
-
-                    <div class="pd-md">
-                        <a href="javascript:;" class="pull-left mg-r-md">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x text-success"></i>
-                                <i class="fa fa-download fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                        Ane Marín
-                        <small>Left the group(HR)</small><br>
-                        <small>4 days ago</small>
-                    </div>
-
-                    <b class="center-block text-white pd-md">
-                        Favourites
-                    </b>
-
-                    <div class="pd-md">
-                        <a href="javascript:;" class="pull-left mg-r-md">
-                            <img src="<%= asset_path('img/faceless.jpg') %>" class="avatar avatar-sm img-circle" alt="">
-                        </a>
-                        <div class="user">
-                            Adi Afrom
-                            <i class="fa fa-circle text-danger pull-right"></i>
-                        </div>
-                        <small>Offline</small>
-                    </div>
-
-                    <div class="pd-md">
-                        <a href="javascript:;" class="pull-left mg-r-md">
-                            <img src="<%= asset_path('img/faceless.jpg') %>" class="avatar avatar-sm img-circle" alt="">
-                        </a>
-                        <div class="user">
-                            Leonie Horn
-                            <i class="fa fa-circle text-danger pull-right"></i>
-                        </div>
-                        <small>Offline</small>
-                    </div>
-
-                    <b class="center-block text-white pd-md">
-                        Friends Online
-                    </b>
-
-                    <div class="pd-md">
-                        <a href="javascript:;" class="pull-left mg-r-md">
-                            <img src="<%= asset_path('img/faceless.jpg') %>" class="avatar avatar-sm img-circle" alt="">
-                        </a>
-                        <div class="user">
-                            Joshua Smart
-                            <i class="fa fa-circle text-warning pull-right"></i>
-                        </div>
-                        <small>is thinking of bananas</small>
-                    </div>
-
-                    <div class="pd-md">
-                        <a href="javascript:;" class="pull-left mg-r-md">
-                            <img src="<%= asset_path('img/faceless.jpg') %>" class="avatar avatar-sm img-circle" alt="">
-                        </a>
-                        <div class="user">
-                            娉 廖
-                            <i class="fa fa-circle text-success pull-right"></i>
-                        </div>
-                        <small>Ready to chat</small>
-                    </div>
-
-                    <div class="pd-md">
-                        <a href="javascript:;" class="pull-left mg-r-md">
-                            <img src="<%= asset_path('img/faceless.jpg') %>" class="avatar avatar-sm img-circle" alt="">
-                        </a>
-                        <div class="user">
-                            Albert Madsen
-                            <i class="fa fa-circle-o text-default pull-right"></i>
-                        </div>
-                        <small>idle</small>
-                    </div>
-                </div>
-            </aside>
+            
             <!-- /chat panel -->
 
             <!-- main content -->
