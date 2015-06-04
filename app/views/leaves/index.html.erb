@@ -1,0 +1,61 @@
+<h1>List of leave applied</h1>
+
+<%= message = flash.each.map do |msg| msg[1] end
+raw message.join('<br>')
+%>
+
+<span class="pull-right">
+    <a class="btn btn-warning"
+       href="/leaves/new">
+    Apply
+    </a>
+</span>
+
+<table class="table table-striped" border="2">
+<thead>
+    <tr>
+        <th>ID</th>
+        <th>Employee Id</th>
+        <th>Start date</th>
+        <th>End Date</th>
+        <th>Remark</th>
+        <th>Approve By</th>
+        <th>Approve Status</th>
+        <th>Leave Type</th>
+        <th>Action</th>
+    </tr>
+</thead>
+    
+<tbody>
+    <!-- we'll use .each to iterate each participant -->
+    <% @leaves.each do |leave| %>
+    <tr>
+        <td><%= leaves.id %></td>
+        <td><%= leaves.employee_id %>             </td>
+        <td><%= leaves.startdate %></td>
+        <td><%= leaves.approveby_id %>           </td>
+        <td><%= leaves.approvalstat_id %>         </td>
+        <td><%= leaves.leavetype_id %>           </td>
+        
+        <td>
+        <a class="btn btn-info" href="/leaves/<%=leave.id%>">
+                View
+        </a>
+            
+        <a class="btn btn-success" href="/leaves/<%=leave.id%>/edit">
+                Edit
+        </a>
+            
+            <%= link_to 'Delete', leaves,
+                method: :delete,
+                class: "btn btn-danger",
+                data: {confirm: 'Are you           sure?'} %>
+            
+        </td>
+    </tr>
+    
+    <% end %>
+    
+    
+</tbody>
+</table>

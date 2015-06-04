@@ -28,7 +28,6 @@ class EmployeesController < ApplicationController
     def update
         @employee = Employee.find(params[:id])
         @employee.name = params[:name]
-        @employee.employeenum = params[:employeenum]
         @employee.department_id = params[:department_id]
         @employee.position_id = params[:position_id]
         @employee.phonenum = params[:phonenum]
@@ -38,7 +37,7 @@ class EmployeesController < ApplicationController
       
       if @employee.save!
         flash[:info] = "Employee record has been updated!"
-        reditect_to '/employees'
+        redirect_to '/employees'
       end
     end
   
@@ -53,7 +52,11 @@ class EmployeesController < ApplicationController
   end
   
   def new
-    @employee = Employee.new
+    
+  end
+  
+  def create
+  @employee = Employee.new
     @employee.name = params[:name]
     @employee.employeenum = params[:employeenum]
     @employee.department_id = params[:department_id]

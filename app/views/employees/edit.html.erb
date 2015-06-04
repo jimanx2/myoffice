@@ -1,7 +1,9 @@
-<h3 class="col-md-6 col-md-offset-2">Update Employee: </h3>
+<h3 class="col-md-5 col-md-offset-2">Update Employee : 
+  <span class="pull-right"><%= @employee.employeenum %></span></h3>
 <hr/><hr/><hr/><hr/>
 <form id="update_form" action="/employees/<%= @employee.id %>/edit" method="post">
     <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
+  
     <div class="form-group col-md-5 col-md-offset-2">
         <label class="col-md-3">Name</label>
         <div class="col-md-9">
@@ -10,22 +12,15 @@
                value="<%= @employee.name %>"/>
         </div>
     </div>
-    <div class="form-group col-md-5 col-md-offset-2">
-        <label class="col-md-3">Employee No</label>
-        <div class="col-md-4">
-        <input type="text" name="employeenum" 
-               class="form-control" 
-               value="<%= @employee.employeenum %>"/>
-        </div>
-        <div class="col-md-5"></div>
-    </div>
     
     <div class="form-group col-md-5 col-md-offset-2">
         <label class="col-md-3">Department</label>
         <div class="col-md-7">
-        <input type="text" name="departmentid" 
-               class="form-control" 
-               value="<%= @employee.department_id %>"/>
+        <select name="department_id" class="form-control selectpicker">
+          <% Department.all.each do |department| %>
+          <option value="<%= department.id %>" <%= @employee.department_id == department.id ? "selected" :"" %>><%= department.name %></option>
+          <% end %>
+        </select>
         </div>
       <div class="col-md-6"></div>
     </div>
@@ -33,9 +28,11 @@
     <div class="form-group col-md-5 col-md-offset-2">
         <label class="col-md-3">Position</label>
         <div class="col-md-7">
-        <input type="text" name="positionid" 
-               class="form-control" 
-               value="<%= @employee.position_id %>"/>
+        <select name="position_id" class="form-control selectpicker">
+          <% Position.all.each do |position| %>
+          <option value="<%= position.id %>" <%= @employee.position_id == position.id ? "selected" :"" %>><%= position.name %></option>
+          <% end %>
+        </select>
         </div>
       <div class="col-md-2"></div>
     </div>
@@ -72,7 +69,7 @@
         <div class="col-md-3">
         <input type="text" name="eligibilityleave" 
                class="form-control" 
-               value="<%= @employee.eligibilityleave %>"/>
+               value="<%= @employee.eligibilityleave %>" />
         </div>
         <div class="col-md-6 col-md-offset-0"></div>
     </div>
