@@ -1,1 +1,52 @@
-test
+<h1>Issues Listing</h1>
+
+<%= 
+messages = flash.each.map do |msg| msg[1] end; 
+raw messages.join('br')
+%>
+
+<span class="pull-right">
+<a class="btn btn-warning"
+   href="/issues/new">
+    Add Ticket
+</a>
+</span>
+
+
+<table class="table table-striped" border="2">
+<thead>
+    <tr>
+    <td>ID</td>
+    <td>Issue Description</td>
+    <td>Issue Status</td>
+    <td>Action</td>
+    </tr>
+    </thead>
+<tbody>
+<!-- we'll use each to iterate each issues -->
+  <% @issues.each do |issues| %>
+    <tr>
+      <td><%= issues.id %></td>
+      <td><%= issues.description %></td>
+      <td><%= issues.status %></td>
+        <td>
+        <a class="btn btn-info" href="/issues/<%=issues.id%>">
+                View
+        </a>
+            
+        <a class="btn btn-success" href="/issues/<%=issues.id%>/edit">
+                Edit
+        </a>
+            
+          <%= link_to 'Remove', issues,
+                method: :delete,
+                class: "btn btn-danger",
+                data: {confirm: 'Are you sure?'} %>
+        </td>
+    </tr>
+    
+    <% end %>
+    
+</tbody>
+
+</table>
