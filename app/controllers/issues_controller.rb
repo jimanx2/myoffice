@@ -1,7 +1,6 @@
 class IssuesController < ApplicationController
   layout 'administrator'
   before_action :authenticate_user!
-    
   def index
     @issues = Issue.all || []
       respond_to do |format|

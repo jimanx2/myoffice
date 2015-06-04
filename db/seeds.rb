@@ -18,3 +18,9 @@ Position.create([
     ])
 
 
+
+Department.create([
+    {:name => "HRM"},
+    {:name => "FINANCE"},
+    {:name => "TASK"}
+    ])
