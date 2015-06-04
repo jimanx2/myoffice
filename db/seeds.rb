@@ -20,7 +20,9 @@ Position.create([
 
 
 Department.create([
-    {:name => "HRM"},
-    {:name => "FINANCE"},
-    {:name => "TASK"}
+    {:name => "Manager Finance", :code => "DG50", },
+    {:name => "Manager Human Resource", :code => "DG53"},
+    {:name => "Programmer", :code => "DG45"}
     ])
+
+

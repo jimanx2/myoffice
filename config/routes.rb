@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :issues
   post 'issues/newissue' => 'issues#create'
   post 'issues/:id/edit' => 'issues#update'
+    post 'departments/new' => 'departments#create'
+    post 'departments/:id/edit' => 'departments#update'
   
   resources :employees
   post 'employees/:id/edit' => 'employees#update'
