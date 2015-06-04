@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   post 'issues/:id/edit' => 'issues#update'
   
   resources :employees
+  post 'employees/:id/edit' => 'employees#update'
+  post 'employees/new' => 'employees#create'
   resources :departments
   resources :positions
     
