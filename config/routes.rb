@@ -2,8 +2,22 @@ Rails.application.routes.draw do
   
   devise_for :users
   #devise_for :users
+    
+    
+    get 'salaries/index'
+    
+    get 'employee/index'
 
-  resources :pages
+    resources :salaries
+    
+    resources :employee
+    
+    controller :salaries do
+        post 'salaries/show' 
+    end
+    
+    post 'salaries/:id/edit' => 'salaries#update'
+    post 'salaries/new' => 'salaries#create'
     
   root to: 'administrator#index'
   # The priority is based upon order of creation: first created -> highest priority.
