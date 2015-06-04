@@ -1,8 +1,5 @@
-Rails.application.routes.draw do
-
+Rails.application.routes.draw do  
   devise_for :users
-  #devise_for :users
-  
   ActiveAdmin.routes(self)
   resources :pages
   root to: 'administrator#index'
