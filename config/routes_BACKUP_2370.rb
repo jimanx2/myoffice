@@ -10,7 +10,6 @@ Rails.application.routes.draw do
     
 >>>>>>> 2faa22601cd1269bf07963ddcb6ddca5dcba4bbf
   root to: 'administrator#index'
-  resources :issues
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
