@@ -45,4 +45,7 @@ end
 
 gem 'devise'
 gem 'activeadmin' , github:'activeadmin'
-gem 'rack-raw-upload'
+
+gem 'mail_form'
+
+gem 'simple_form'gem 'rack-raw-upload'

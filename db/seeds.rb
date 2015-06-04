@@ -9,3 +9,20 @@ issuestat_pending = Issuestat.create(status: 'Pending')
 issuestat_active = Issuestat.create(status: 'Active')
 issuestat_resolved = Issuestat.create(status: 'Resolved')
 Issue.create(issuestat_id: issuestat_pending.id,description: "Test",issueby_id:2,title: "test2")
+
+Position.create([
+    {:name => "Manager Finance", :code => "DG50", :eligibilityleave => "30"},
+    {:name => "Manager Human Resource", :code => "DG53", :eligibilityleave => "25"},
+    {:name => "Programmer", :code => "DG45", :eligibilityleave => "20"}
+    
+    ])
+
+
+
+Department.create([
+    {:name => "Manager Finance", :code => "DG50", },
+    {:name => "Manager Human Resource", :code => "DG53"},
+    {:name => "Programmer", :code => "DG45"}
+    ])
+
+

@@ -1,5 +1,7 @@
 <h1><center><b>Position List</b></center></h1>
+
 </br>
+
 <%= 
 message = flash.each.map do |msg| msg[1] end 
 raw message.join('<br>')
@@ -15,7 +17,7 @@ raw message.join('<br>')
 </span>
 
 
-<table class="table table-bordered table-striped no-margin">
+<table class="table table-bordered" border="5" >
 <thread>
     <tr>
         <th>ID</th>
@@ -32,11 +34,12 @@ raw message.join('<br>')
         <td> <%= position.name %></td>
         <td> <%= position.code %></td>
         <td> <%= position.eligibilityleave %></td>
+        <td>
        
             <a class="btn btn-info" href="/positions/<%= position.id %>">
             View Details
             </a>
-            <a class="btn btn-success" href="/positions/<%= position.id %>">
+            <a class="btn btn-success" href="/positions/<%= position.id %>/edit">
             Edit
             </a>
             <%= link_to 'Remove', position,
@@ -50,10 +53,6 @@ raw message.join('<br>')
     <% end %>
     
     </tbody>
-    
-
-
-
 
 
 </table>

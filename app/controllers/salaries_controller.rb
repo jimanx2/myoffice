@@ -1,5 +1,5 @@
 class SalariesController < ApplicationController
-    
+    layout 'administrator'
     def index
         @salaries = Salary.all
         respond_to do |format|
@@ -10,9 +10,11 @@ class SalariesController < ApplicationController
         
     end
     
-    def edit
-        employee_id = params[:employeenum]
-        @employee = Employee.find(employee_id)
+    def show
+        
+        @employee = Employee.find_by_employeenum(params[:employeenum])
+        
+        
         
     end
 end

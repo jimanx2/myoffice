@@ -6,14 +6,11 @@ raw messages.join('<br/>')
 %>
 
 <span class="pull-right">
-<a class="btn btn-warning"
-   href="/employees/new">
-    Add New Employee
-</a>
+<a class="btn btn-warning" href="/employees/new"> Add New Employee</a>
 </span>
 
 
-<table class="table table-striped" border="0">
+<table class="col-md-12 table table-striped" border="0">
 <thead>
     <tr>
     <td>No</td>
@@ -23,7 +20,6 @@ raw messages.join('<br/>')
     <td>Position</td>
     <td>Contact No</td>
     <td>Email</td>
-    <td>Address</td>
     <td>Eligibility Leave</td>
     </tr>
     </thead>
@@ -32,24 +28,23 @@ raw messages.join('<br/>')
   <% @employees.each do |employees| %>
     <tr>
       <td><%= employees.id %></td>
-      <td><%= employees.name %></td>
       <td><%= employees.employeenum %></td>
-      <td><%= employees.department_id %></td>
-      <td><%= employees.position_id %></td>
+      <td><%= employees.name %></td>
+      <td><%= employees.department.name %></td>
+      <td><%= employees.position.name %></td>
       <td><%= employees.phonenum %></td>
       <td><%= employees.email %></td>
-      <td><%= employees.address %></td>
       <td><%= employees.eligibilityleave %></td>
-        <td>
+        <td clas="col-md-3">
         <a class="btn btn-info" href="/employees/<%=employees.id%>">
-                View
+                VIEW
         </a>
             
         <a class="btn btn-success" href="/employees/<%=employees.id%>/edit">
-                Edit
+                EDIT
         </a>
             
-          <%= link_to 'Delete', employees,
+          <%= link_to 'DELETE', employees,
                 method: :delete,
                 class: "btn btn-danger",
                 data: {confirm: 'Are you sure?'} %>

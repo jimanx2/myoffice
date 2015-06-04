@@ -1,6 +1,6 @@
 class IssuesController < ApplicationController
-    #before_action :authenticate_user!
-    
+  layout 'administrator'
+  
   def index
     @issues = Issue.all || []
       respond_to do |format|
@@ -17,8 +17,14 @@ class IssuesController < ApplicationController
           
       end
   end
+  
+  def show
+          @issues = Issue.find(params[:id])
+  end 
       
-    
+  before_action :require_login
+  private
+  def require_login
   def new
         
     end
@@ -36,9 +42,7 @@ class IssuesController < ApplicationController
         
     end
     
-  def show
-          @issues = Issue.find(params[:id])
-  end  
+   
     
     
     def edit
@@ -59,7 +63,15 @@ end
           redirect_to '/issues'
         end
     end
-    
+  
+  def destroy
+    @issues = Issue.find(params[:id])
+    if @issues.destroy
+      flash[:info] = "Issues record has been removed"
+      redirect_to '/issues'
+        end
+    end
+  end 
    
         
 end

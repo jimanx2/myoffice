@@ -1,22 +1,28 @@
 <style type="text/css">
   .nav-button {
     line-height: 2em;
-    margin-right: 5px;
-    margin-left: 5px;
+  }
+  .btn-group {
+    padding: 0 !important; 
+  }
+  .btn-margin {
+    margin-left: 2px;
+    margin-right: 2px;
+    width: 23%;
   }
 </style>
 <div class="row">
-  <div class="col-lg-12">
       <section class="panel">
           <div class="panel-body">
-              <div class="demo-button text-center">
+            <div class="col-lg-12">
+              <div class="demo-button text-center col-lg-10 col-lg-offset-1">
                   <!-- Standard button -->
-                  <button class="btn btn-danger nav-button col-md-2">HOME</button>
+                  <button class="btn btn-danger nav-button col-md-3 btn-margin">HOME</button>
                   <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                  <button type="button" class="btn btn-primary nav-button col-md-2">ABOUT</button>
+                  <button type="button" class="btn btn-primary nav-button col-md-3 btn-margin">ABOUT</button>
                   <!-- Indicates a successful or positive action -->
                   
-                <div class="btn-group show-on-hover col-md-2">
+                <div class="btn-group show-on-hover col-md-3 btn-margin">
                   <button type="button" class="btn btn-success dropdown-toggle col-md-12  nav-button" data-toggle="dropdown">TEAM
                       <span class="caret"></span>
                   </button>
@@ -35,7 +41,7 @@
                   </ul>
               </div>
                 
-              <div class="btn-group show-on-hover col-md-2">
+              <div class="btn-group show-on-hover col-md-3 btn-margin">
                   <button type="button" class="btn btn-info dropdown-toggle col-md-12  nav-button" data-toggle="dropdown">CONTACT
                       <span class="caret"></span>
                   </button>
@@ -44,16 +50,16 @@
                           <a href="javascript:;">Contact Us</a>
                       </li>
                       <li>
-                          <a href="javascript:;">Feedback</a>
+                          <a href="/contacts/new">Feedback</a>
                       </li>
                       
                   </ul>
               </div>
-
+              </div>
               </div>
           </div>
       </section>
-  </div>
+  
 </div>
 
 
@@ -67,25 +73,39 @@
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
     <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
+    <li data-target="#myCarousel" data-slide-to="5"></li>
+    <li data-target="#myCarousel" data-slide-to="6"></li>
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="img_chania.jpg" alt="Chania">
+      <img src="<%= asset_path('img/1.jpg') %>">
     </div>
 
     <div class="item">
-      <img src="img_chania2.jpg" alt="Chania">
+      <img src="<%= asset_path('img/3.jpg') %>">
     </div>
 
     <div class="item">
-      <img src="img_flower.jpg" alt="Flower">
+      <img src="<%= asset_path('img/4.jpg') %>">
+    </div>
+    <div class="item">
+      <img src="<%= asset_path('img/5.jpg') %>">
+    </div>
+        <div class="item active">
+      <img src="<%= asset_path('img/6.jpg') %>">
     </div>
 
     <div class="item">
-      <img src="img_flower2.jpg" alt="Flower">
+       <img src="<%= asset_path('img/7.jpg') %>">
     </div>
+
+    <div class="item">
+      <img src="<%= asset_path('img/8.jpg') %>">
+    </div>
+    
   </div>
 
   <!-- Left and right controls -->
@@ -98,7 +118,6 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
 
 
 

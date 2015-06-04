@@ -1,6 +1,6 @@
 class PositionsController < ApplicationController
     
-    
+    layout 'administrator'
     def index
         @position = Position.all
         

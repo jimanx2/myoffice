@@ -1,4 +1,6 @@
 class EmployeesController < ApplicationController
+    layout 'administrator'  
+    def index
   layout 'administrator'
   def index
         @employees = Employee.all
@@ -38,6 +40,7 @@ class EmployeesController < ApplicationController
       
       if @employee.save!
         flash[:info] = "Employee record has been updated!"
+        redirect_to '/employees'
         reditect_to '/employees'
       end
     end
@@ -53,6 +56,11 @@ class EmployeesController < ApplicationController
   end
   
   def new
+    
+  end
+  
+  def create
+  @employee = Employee.new
     @employee = Employee.new
     @employee.name = params[:name]
     @employee.employeenum = params[:employeenum]
