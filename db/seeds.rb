@@ -5,4 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Issuestat.create([{ status: 'Pending' }, { status: 'Resolved' }, { status: 'Active' }])
+issuestat_pending = Issuestat.create(status: 'Pending')
+issuestat_active = Issuestat.create(status: 'Active')
+issuestat_resolved = Issuestat.create(status: 'Resolved')
+Issue.create(issuestat_id: issuestat_pending.id,description: "Test",issueby_id:2,title: "test2")
