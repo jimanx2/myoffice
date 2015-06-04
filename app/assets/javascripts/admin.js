@@ -17,5 +17,6 @@
  *= require pace/pace.min
  
  *= require js/off-canvas
+ *= require js/dashboard
  *= require js/main
  */

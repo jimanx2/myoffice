@@ -1,0 +1,45 @@
+<h1>New Issue Ticket</h1>
+
+<div>
+<form action="/issues/newissue"
+    method="post" id="new_form">
+    
+    <%= hidden_field_tag"authenticity_token", form_authenticity_token %>
+    
+<div class="form-group">
+    <label class="col-md-4" align="center">Title</label>
+    <div class="col-md-8">
+    <input type="text" name="title"
+           class="form-control" />
+        </div>
+    </div>
+    
+    
+
+<div class="form-group">
+    <label class="col-md-4" align="center">Description</label>
+    <div class="col-md-8">
+    <input type="text" name="description"
+           class="form-control" />
+    </div>
+    </div>
+    
+<div class="action" align="center">
+    <a href="#" id="btnSubmit" class="btn btn-success">Submit</a>
+    <a href="#" class="btn btn-danger">Cancel</a>
+    </div>
+    
+</form>
+</div>
+
+<% content_for :js do %>
+<script type="text/javascript">
+$('#btnSubmit').click(function(){
+    $('#new_form').submit();
+});
+</script>
+<% end %>
+
+
+
+
