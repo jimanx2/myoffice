@@ -3,17 +3,20 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   resources :pages
   root to: 'administrator#index'
-  
   resources :issues
   post 'issues/newissue' => 'issues#create'
   post 'issues/:id/edit' => 'issues#update'
+    post 'departments/new' => 'departments#create'
+    post 'departments/:id/edit' => 'departments#update'
   
   resources :employees
   post 'employees/:id/edit' => 'employees#update'
   post 'employees/new' => 'employees#create'
   resources :departments
   resources :positions
+  resources :leaves
     
+    get 'leaves/index'
     
     get 'salaries/index'
     
@@ -30,11 +33,15 @@ Rails.application.routes.draw do
     post 'salaries/:id/edit' => 'salaries#update'
     post 'salaries/new' => 'salaries#create'
   
+<<<<<<< HEAD
   #GET, POST, PUT, PATCH, DELETE
   resources :leavetypes
     post 'leavetypes/:id/edit' => 'leavetypes#update'
     post 'leavetypes/new' => 'leavetypes#create'
     
+=======
+  resources "contacts", only: [:new, :create]
+>>>>>>> 6466d689f83cb36ec4f44b0e69d2965265e4ef33
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
