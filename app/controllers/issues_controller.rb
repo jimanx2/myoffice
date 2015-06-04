@@ -25,9 +25,9 @@ class IssuesController < ApplicationController
     
     def create
       @issues = Issue.new(params[:id])
-      @issues.description = params[:title]
+      @issues.title = params[:title]
       @issues.description = params[:description]
-        
+      @issues.issuestat = Issuestat.find_by_status("Pending")
       if @issues.save!
             
         flash[:info] = "Issues record has been added"
@@ -44,6 +44,7 @@ class IssuesController < ApplicationController
     def edit
           
       @issues = Issue.find(params[:id])
+      
 end
     
     def update
@@ -51,6 +52,7 @@ end
           @issues = Issue.find(params[:id])
       @issues.title = params[:title]
       @issues.description = params[:description]
+      @issues.issuestat = Issuestat.find_by_status("Pending")
         if @issues.save!
             
           flash[:info] = "Issues record has been updated"
