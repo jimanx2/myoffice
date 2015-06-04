@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   post 'employees/new' => 'employees#create'
   resources :departments
   resources :positions
+  resources :leaves
     
+    get 'leaves/index'
     
     get 'salaries/index'
     
