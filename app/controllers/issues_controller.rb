@@ -1,6 +1,6 @@
 class IssuesController < ApplicationController
   layout 'administrator'
-  before_action :authenticate_user!
+  
   def index
     @issues = Issue.all || []
       respond_to do |format|
@@ -17,8 +17,14 @@ class IssuesController < ApplicationController
           
       end
   end
+  
+  def show
+          @issues = Issue.find(params[:id])
+  end 
       
-    
+  before_action :require_login
+  private
+  def require_login
   def new
         
     end
@@ -36,9 +42,7 @@ class IssuesController < ApplicationController
         
     end
     
-  def show
-          @issues = Issue.find(params[:id])
-  end  
+   
     
     
     def edit
@@ -67,7 +71,7 @@ end
       redirect_to '/issues'
         end
     end
-    
+  end 
    
         
 end
