@@ -1,0 +1,44 @@
+<h1>Update Issue: <%= @issues.id %></h1>
+
+<div>
+<form action="/issues/<%= @issues.id %>/edit"
+    method="post" id="update_form">
+    
+    <%= hidden_field_tag"authenticity_token", form_authenticity_token %>
+    
+<div class="form-group">
+    <label class="col-md-4" align="center">Issue Title</label>
+    <div class="col-md-8">
+    <input type="text" name="title"
+           class="form-control" value="<%= @issues.title %>"/>
+        </div>
+    </div>  
+  
+<div class="form-group">
+    <label class="col-md-4" align="center">Issue Description</label>
+    <div class="col-md-8">
+    <input type="text" name="description"
+           class="form-control" value="<%= @issues.description %>"/>
+        </div>
+    </div>
+    
+    
+<div class="action" align="center">
+    <a href="#" id="btnUpdate" class="btn btn-success">Update</a>
+    <a href="#" class="btn btn-danger">Cancel</a>
+    </div>
+    
+</form>
+</div>
+
+<% content_for :js do %>
+<script type="text/javascript">
+$('#btnUpdate').click(function(){
+    $('#update_form').submit();
+});
+</script>
+<% end %>
+
+
+
+

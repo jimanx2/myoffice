@@ -1,5 +1,6 @@
 /*
  *= require jquery
+ *= require jquery_ujs
  *= require bootstrap/js/bootstrap
  *= require jquery.easing.min.js
  *= require jquery.placeholder.js
@@ -17,5 +18,6 @@
  *= require pace/pace.min
  
  *= require js/off-canvas
+ *= require js/dashboard
  *= require js/main
  */

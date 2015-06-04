@@ -1,0 +1,94 @@
+<h3 class="col-md-6 col-md-offset-2">Update Employee: </h3>
+<hr/><hr/><hr/><hr/>
+<form id="update_form" action="/employees/<%= @employee.id %>/edit" method="post">
+    <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
+    <div class="form-group col-md-5 col-md-offset-2">
+        <label class="col-md-3">Name</label>
+        <div class="col-md-9">
+        <input type="text" name="name" 
+               class="form-control" 
+               value="<%= @employee.name %>"/>
+        </div>
+    </div>
+    <div class="form-group col-md-5 col-md-offset-2">
+        <label class="col-md-3">Employee No</label>
+        <div class="col-md-4">
+        <input type="text" name="employeenum" 
+               class="form-control" 
+               value="<%= @employee.employeenum %>"/>
+        </div>
+        <div class="col-md-5"></div>
+    </div>
+    
+    <div class="form-group col-md-5 col-md-offset-2">
+        <label class="col-md-3">Department</label>
+        <div class="col-md-7">
+        <input type="text" name="departmentid" 
+               class="form-control" 
+               value="<%= @employee.department_id %>"/>
+        </div>
+      <div class="col-md-6"></div>
+    </div>
+    
+    <div class="form-group col-md-5 col-md-offset-2">
+        <label class="col-md-3">Position</label>
+        <div class="col-md-7">
+        <input type="text" name="positionid" 
+               class="form-control" 
+               value="<%= @employee.position_id %>"/>
+        </div>
+      <div class="col-md-2"></div>
+    </div>
+    
+    <div class="form-group col-md-5 col-md-offset-2">
+        <label class="col-md-3">Contact No</label>
+        <div class="col-md-4">
+        <input type="text" name="phonenum" 
+               class="form-control" 
+               value="<%= @employee.phonenum %>"/>
+        </div>
+        <div class="col-md-5"></div>
+    </div>
+      
+    <div class="form-group col-md-5 col-md-offset-2">
+        <label class="col-md-3">Email</label>
+        <div class="col-md-9">
+        <input type="text" name="email" 
+               class="form-control" 
+               value="<%= @employee.email %>"/>
+        </div>
+    </div>
+      
+    <div class="form-group col-md-5 col-md-offset-2">
+        <label class="col-md-3">Address</label>
+        <div class="col-md-9">
+        <textarea row="4" col="100" type="text" name="address" 
+               class="form-control"><%= @employee.address %></textarea>
+        </div>
+    </div>
+      
+    <div class="form-group col-md-5 col-md-offset-2">
+        <label class="col-md-3">Eligibility Leave</label>
+        <div class="col-md-3">
+        <input type="text" name="eligibilityleave" 
+               class="form-control" 
+               value="<%= @employee.eligibilityleave %>"/>
+        </div>
+        <div class="col-md-6 col-md-offset-0"></div>
+    </div>
+    
+    <div class="form-group col-md-10 col-md-offset-3">
+    <div class="action col-md-8">
+        <a href="#" id="btnUpdate" class="btn btn-success">UPDATE</a>
+        <a href="/employees" class="btn btn-danger">CANCEL</a>
+    </div>
+  </div>
+</form>
+    
+    <% content_for :js do %>
+    <script type="text/javascript">
+        $('#btnUpdate').click(function(){
+            $('#update_form').submit();
+        });
+    </script>
+    <% end %>

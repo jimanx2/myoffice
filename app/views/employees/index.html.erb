@@ -1,0 +1,63 @@
+<h1>Employees Listing</h1>
+
+<%= 
+messages = flash.each.map do |msg| msg[1] end; 
+raw messages.join('<br/>')
+%>
+
+<span class="pull-right">
+<a class="btn btn-warning"
+   href="/employees/new">
+    Add New Employee
+</a>
+</span>
+
+
+<table class="table table-striped" border="0">
+<thead>
+    <tr>
+    <td>No</td>
+    <td>Employee ID</td>
+    <td>Name</td>
+    <td>Department</td>
+    <td>Position</td>
+    <td>Contact No</td>
+    <td>Email</td>
+    <td>Address</td>
+    <td>Eligibility Leave</td>
+    </tr>
+    </thead>
+<tbody>
+<!-- we'll use each to iterate each employees -->
+  <% @employees.each do |employees| %>
+    <tr>
+      <td><%= employees.id %></td>
+      <td><%= employees.name %></td>
+      <td><%= employees.employeenum %></td>
+      <td><%= employees.department_id %></td>
+      <td><%= employees.position_id %></td>
+      <td><%= employees.phonenum %></td>
+      <td><%= employees.email %></td>
+      <td><%= employees.address %></td>
+      <td><%= employees.eligibilityleave %></td>
+        <td>
+        <a class="btn btn-info" href="/employees/<%=employees.id%>">
+                View
+        </a>
+            
+        <a class="btn btn-success" href="/employees/<%=employees.id%>/edit">
+                Edit
+        </a>
+            
+          <%= link_to 'Delete', employees,
+                method: :delete,
+                class: "btn btn-danger",
+                data: {confirm: 'Are you sure?'} %>
+        </td>
+    </tr>
+    
+    <% end %>
+    
+</tbody>
+
+</table>
