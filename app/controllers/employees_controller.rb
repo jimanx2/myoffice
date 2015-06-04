@@ -3,11 +3,16 @@ class EmployeesController < ApplicationController
     def index
         @employees = Employee.all
         
-        respond_to do |format| format.html do
-        end
+        respond_to do |format| 
+          format.html do
+          end
         
-        format.json do
+          format.json do
             render json: @employees
+          end
+          
+          format.pdf do
+          end
         end
         
     end   
@@ -29,9 +34,9 @@ class EmployeesController < ApplicationController
         @employee.phonenum = params[:phonenum]
         @employee.email = params[:email]
         @employee.address = params[:address]
-        @employee.eligilibilityleave = params[:eligilibilityleave]
+        @employee.eligibilityleave = params[:eligibilityleave]
       
-      if @participant.save!
+      if @employee.save!
         flash[:info] = "Employee record has been updated!"
         reditect_to '/employees'
       end
@@ -56,11 +61,11 @@ class EmployeesController < ApplicationController
     @employee.phonenum = params[:phonenum]
     @employee.email = params[:email]
     @employee.address = params[:address]
-    @employee.eligilibilityleave = params[:eligilibilityleave]
+    @employee.eligibilityleave = params[:eligibilityleave]
     
-    if @participant.save!
+    if @employee.save!
       flash[:info] = "Employee record has been created!"
-      reditect_to '/employees'
+      redirect_to '/employees'
     end
   end
       
