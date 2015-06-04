@@ -1,14 +1,21 @@
-<h1>Salary Statement : <%= @employee.employeenum %></h1>
+<h1>Salary Statement : </h1>
 <hr/>
 <br/><br/>
 <div class = "row">
     <div class = "col-md-8 col-md-offset-2">
     <label class = "col-md-4">Name</label>
-        <div class = "col-md-6"><%= @employee.name %></div>
+    <div class = "col-md-6"><%= @employee.name %></div>
     </div>
     
-    <div class = "col-md-8 col-md-offset-2">
-    <label class = "col-md-4">Mobile Phone No.</label>
-        <div class = "col-md-6"><%= @employee.phonenum %></div>
+    <label class = "col-md-4">Address</label>
+    <div class = "col-md-6"><%= @employee.address %></div>
     </div>
+
+<label class = "col-md-4">Name</label>
+<div class = "col-md-6"><%= @employee.salary.try :rate_id %></div>
+    </div>
+    
+    
 </div>
+
+
