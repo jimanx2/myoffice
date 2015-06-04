@@ -1,6 +1,6 @@
 class IssuesController < ApplicationController
     #before_action :authenticate_user!
-    
+    layout 'administrator'
   def index
     @issues = Issue.all || []
       respond_to do |format|
@@ -19,52 +19,47 @@ class IssuesController < ApplicationController
   end
       
     
-    def new
+  def new
         
     end
     
     def create
-        @participant = Participant.new(params[:id])
-        @participant.name = params[:name]
-        @participant.mobile = params[:mobile]
-        
-         if @participant.save!
+      @issues = Issue.new(params[:id])
+      @issues.title = params[:title]
+      @issues.description = params[:description]
+      @issues.issuestat = Issuestat.find_by_status("Pending")
+      if @issues.save!
             
-             flash[:info] = "Participant record has been added"
-            redirect_to '/participants'
+        flash[:info] = "Issues record has been added"
+        redirect_to '/issues'
         end
         
     end
     
-      def show
-          
-          @participant = Participant.find(params[:id])
+  def show
+          @issues = Issue.find(params[:id])
   end  
     
     
     def edit
           
-          @participant = Participant.find(params[:id])
+      @issues = Issue.find(params[:id])
+      
 end
     
     def update
           
-          @participant = Participant.find(params[:id])
-        @participant.name = params[:name]
-        @participant.mobile = params[:mobile]
-        if @participant.save!
+          @issues = Issue.find(params[:id])
+      @issues.title = params[:title]
+      @issues.description = params[:description]
+      @issues.issuestat = Issuestat.find_by_status("Pending")
+        if @issues.save!
             
-            flash[:info] = "Participant record has been updated"
-            redirect_to '/participants'
+          flash[:info] = "Issues record has been updated"
+          redirect_to '/issues'
         end
     end
     
-    def destroy
-          @participant = Participant.find(params[:id])
-        if @participant.destroy
-            flash[:info] = "Participant record has been removed"
-            redirect_to '/participants'
-        end
-    end
+   
         
 end
