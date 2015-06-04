@@ -1,12 +1,8 @@
-Rails.application.routes.draw do
-
+Rails.application.routes.draw do  
   devise_for :users
-  #devise_for :users
-  
   ActiveAdmin.routes(self)
   resources :pages
   root to: 'administrator#index'
-  
   resources :issues
   post 'issues/newissue' => 'issues#create'
   post 'issues/:id/edit' => 'issues#update'
@@ -34,6 +30,8 @@ Rails.application.routes.draw do
     
     post 'salaries/:id/edit' => 'salaries#update'
     post 'salaries/new' => 'salaries#create'
+  
+  resources "contacts", only: [:new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,6 +1,6 @@
 class IssuesController < ApplicationController
-    #before_action :authenticate_user!
-    
+  layout 'administrator'
+  before_action :authenticate_user!
   def index
     @issues = Issue.all || []
       respond_to do |format|
@@ -57,6 +57,14 @@ end
             
           flash[:info] = "Issues record has been updated"
           redirect_to '/issues'
+        end
+    end
+  
+  def destroy
+    @issues = Issue.find(params[:id])
+    if @issues.destroy
+      flash[:info] = "Issues record has been removed"
+      redirect_to '/issues'
         end
     end
     
