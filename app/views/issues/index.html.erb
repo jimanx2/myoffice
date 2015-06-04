@@ -17,8 +17,9 @@ raw messages.join('br')
 <thead>
     <tr>
     <td>ID</td>
+    <td>Issue Title</td>
     <td>Issue Description</td>
-    <td>Issue Status</td>
+    <td>Status</td>
     <td>Action</td>
     </tr>
     </thead>
@@ -27,8 +28,9 @@ raw messages.join('br')
   <% @issues.each do |issues| %>
     <tr>
       <td><%= issues.id %></td>
+      <td><%= issues.title %></td>
       <td><%= issues.description %></td>
-      <td><%= issues.status %></td>
+      <td><%= issues.issuestat.try :status %></td>
         <td>
         <a class="btn btn-info" href="/issues/<%=issues.id%>">
                 View
@@ -44,8 +46,8 @@ raw messages.join('br')
                 data: {confirm: 'Are you sure?'} %>
         </td>
     </tr>
+   <% end %>
     
-    <% end %>
     
 </tbody>
 

@@ -16,3 +16,4 @@
 !/log/.keep
 /tmp
 schema.rb
+Gemfile.lock

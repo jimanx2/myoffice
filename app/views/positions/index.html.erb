@@ -1,0 +1,59 @@
+<h1><center><b>Position List</b></center></h1>
+</br>
+<%= 
+message = flash.each.map do |msg| msg[1] end 
+raw message.join('<br>')
+
+%>
+
+<span class="pull-right">
+    <a class="btn btn-warning"
+       href="/positions/new">
+        Add New Position
+    </a>
+
+</span>
+
+
+<table class="table table-bordered table-striped no-margin">
+<thread>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Code</th>
+        <th>Eligibility Leave</th>
+        <th>Action</th>
+    </tr>
+<thread>
+<tbody>
+    <% @position.each do |position| %>
+    <tr>
+        <td> <%= position.id %></td>
+        <td> <%= position.name %></td>
+        <td> <%= position.code %></td>
+        <td> <%= position.eligibilityleave %></td>
+       
+            <a class="btn btn-info" href="/positions/<%= position.id %>">
+            View Details
+            </a>
+            <a class="btn btn-success" href="/positions/<%= position.id %>">
+            Edit
+            </a>
+            <%= link_to 'Remove', position,
+                method: :delete, 
+                class: "btn btn-danger", 
+                data: {confirm:'Are You Sure?'}
+    %>
+            
+        </td>
+    </tr>
+    <% end %>
+    
+    </tbody>
+    
+
+
+
+
+
+</table>
