@@ -59,6 +59,14 @@ end
           redirect_to '/issues'
         end
     end
+  
+  def destroy
+    @issues = Issue.find(params[:id])
+    if @issues.destroy
+      flash[:info] = "Issues record has been removed"
+      redirect_to '/issues'
+        end
+    end
     
    
         
