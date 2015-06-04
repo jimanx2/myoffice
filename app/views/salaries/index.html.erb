@@ -1,0 +1,29 @@
+<h1>Salary Statement</h1>
+
+
+<div class = "row">
+<form action = "/salaries/show"
+      method = "post" id = "show">
+    <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
+
+<div class = "form-group">
+        <label class = "col-md-1">Employee Number</label>
+        <div class = "col-md-2">
+        <input type = "text" name = "employeenum" class = "form-control" />
+        
+    </div>
+    <div class = "action">
+        <a href = "#" class = "btn btn-success" id = "btnSubmit"> SUBMIT</a>
+        <a href = "#" class = "btn btn-danger">CANCEL</a>
+    </div>
+</div>
+</form>
+</div>
+
+<% content_for :js do %>
+<script type = "text/javascript">
+    $('#btnSubmit').click(function() {
+        $('#show').submit();
+    });
+</script>
+<% end %>
