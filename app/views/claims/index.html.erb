@@ -1,8 +1,9 @@
 <h3 class=" col-md-offset-1"><b>Claim Listing</b></h3><hr/>
+<div class="col-md-offset-1">
 <%= 
     messages = flash.each.map do |msg| msg[1] end 
     raw messages.join('<br/>')
-%>
+%></div><br/>
 <div class="col-md-12">
 <span class="pull-left col-md-offset-1">
     <a href="/claims/new" class="btn btn-warning">Add A New Claims</a>
@@ -31,6 +32,10 @@
           <td>
             <a class="btn btn-primary" href="/">View Details</a>
             <a class="btn btn-info" href="/">Edit</a>
+            <%= link_to 'DELETE', claim,
+                method: :delete,
+                class: "btn btn-danger",
+                data: {confirm: 'Are you sure?'} %>
           </td>
       
   

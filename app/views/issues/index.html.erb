@@ -30,7 +30,7 @@ raw messages.join('br')
     <tr>
       <td><%= issues.id %></td>
       <td><%= issues.title %></td>
-      <td><%= issues.description %></td>
+      <td><%= issues.description.first(30) %>....(more)</td>
       <td><%= issues.issuestat.try :status %></td>
         <td>
         <a class="btn btn-info" href="/issues/<%=issues.id%>">
