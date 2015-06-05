@@ -9,10 +9,15 @@ Rails.application.routes.draw do
   root to: 'administrator#index'
   
   resources :issues
-  post 'issues/newissue' => 'issues#create'
-  post 'issues/:id/edit' => 'issues#update'
-    post 'departments/new' => 'departments#create'
-    post 'departments/:id/edit' => 'departments#update'
+  controller :issues do
+    post 'issues/newissue' => 'issues#create'
+    post 'issues/:id/edit' => 'issues#update'
+    post 'issues/:id/resolved' => 'issues#resolved', :as => 'resolve_issue'
+  end
+  
+  
+  post 'departments/new' => 'departments#create'
+  post 'departments/:id/edit' => 'departments#update'
   
   resources :employees
   post 'employees/:id/edit' => 'employees#update'
@@ -23,11 +28,9 @@ Rails.application.routes.draw do
   resources :claims
   post 'claims/new' => 'claims#create'
     
-    get 'leaves/index'
-    
-    get 'salaries/index'
-    
-    get 'employee/index'
+  get 'leaves/index'
+  get 'salaries/index'
+  get 'employee/index'
 
     resources :salaries
     
