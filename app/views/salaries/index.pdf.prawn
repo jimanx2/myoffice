@@ -3,7 +3,7 @@ prawn_document() do |pdf|
     
     pdf.text "Salary Statement"
     
-    @employees = @employees.each.map do |item| [item.name, item.employeenum, item.phonenum, item.address, item.email]
+    @employees = @salaries.each.map do |item| [item.name, item.employee_id, item.phonenum, item.address, item.email]
         end
         
     @employees.unshift ["Name", "Employee Number", "Mobile Phone", "Address", "Email"]

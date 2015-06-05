@@ -1,7 +1,9 @@
 class SalariesController < ApplicationController
     layout 'administrator'
     def index
-        @salaries = Salary.all
+        @salaries = Salary
+        .joins('INNER JOIN employees EMP ON (EMP.id = salaries.employee_id)')
+        
         respond_to do |format|
             format.html do
             end
@@ -13,6 +15,7 @@ class SalariesController < ApplicationController
         end
        
         format.pdf do
+            
         end
         
     end
