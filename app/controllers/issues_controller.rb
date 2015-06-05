@@ -80,6 +80,15 @@ end
           redirect_to '/issues'
         end
   end
+  
+  def reply
+     @issues = Issue.find(params[:id])
+    if @issues.save!
+            
+      flash[:info] = "Issues record has been reply"
+      redirect_to "/issues/#{@issues.id}"
+        end
+  end
    
         
 end
