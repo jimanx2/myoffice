@@ -62,7 +62,7 @@
  */
 /* Body reset */
 body {
-  background: #acafbb;
+  background: #bg.jpg;	
   color: #444444;
   font-weight: 400;
   font-size: 13px;
@@ -667,7 +667,7 @@ aside footer .toggle-sidebar i {
   }
 }
 .main-content {
-  background: #ebeef1;
+  background: url(/assets/img/bg.jpg);
 }
 .main-content .content-wrap {
   padding: 15px;
