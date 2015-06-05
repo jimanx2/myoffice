@@ -3,6 +3,7 @@ class SalariesController < ApplicationController
     def index
         @salaries = Salary
         .joins('INNER JOIN employees EMP ON (EMP.id = salaries.employee_id)')
+        .joins('INNER JOIN paymentstat PS ON (PM.id = salaries.employee_id)')
         
         respond_to do |format|
             format.html do
@@ -23,15 +24,7 @@ end
     
     
     def show
-        
-        
         @employee = Employee.find_by_employeenum(params[:employeenum])
-        
-        
-
-        
-        
-        
     end
         
     end
