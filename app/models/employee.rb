@@ -6,4 +6,5 @@ class Employee < ActiveRecord::Base
     has_many :issues
     has_many :meetings
     belongs_to :position
+    belongs_to :paymentstat
 end

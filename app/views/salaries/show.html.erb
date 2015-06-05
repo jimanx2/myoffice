@@ -30,6 +30,10 @@ raw messages.join('<br>')
 <tr>
     <td>Email</td> <td><%= @employee.email %></td>
 </tr>
+    
+<tr>
+    <td>Payment Status</td> <td><%= @employee.paymentstat.try :status %></td>
+</tr>
       
     
     </tbody>  
