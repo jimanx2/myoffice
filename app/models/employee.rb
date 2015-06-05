@@ -6,5 +6,10 @@ class Employee < ActiveRecord::Base
     has_many :issues
     has_many :meetings
     belongs_to :position
-    belongs_to :paymentstat
+    
+    def salary_paid
+        salaries.select {|salary|
+            salary.date.month == Time.now.month    
+        }.count > 0 ? "PAID" : "UNPAID"
+    end
 end

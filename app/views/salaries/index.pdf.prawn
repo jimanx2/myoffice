@@ -3,35 +3,11 @@ prawn_document() do |pdf|
     
     pdf.text "Salary Statement" 
   
-    
-          @employees = @salaries.each.map do |item| [item.name]
-        end
-        
-        
-          @employees = @salaries.each.map do |item| [item.employee_id]
-        end
-        
-          @employees = @salaries.each.map do |item| [item.phonenum]
-        end
-        
-          @employees = @salaries.each.map do |item| [item.address]
-        end
-        
-          @employees = @salaries.each.map do |item| [item.email]
-        end
-        
-        
-        
-    @employees.unshift ["Name"]
-    
-    @employees.unshift ["Employee ID"]
-    
-    @employees.unshift ["Mobile Phone"]
-    
-    @employees.unshift ["Address"]
-    
-    @employees.unshift ["Email"]
-    
+    @employees = @salaries.each.map do |item| [
+        item.name, item.employeenum, item.phonenum, item.address, item.email, item.salary_paid 
+    ] end
+            
+    @employees.unshift ["Name","Employee ID","Mobile Phone","Address","Email", "Payment Status"]
     
     pdf.table @employees
 end
