@@ -17,7 +17,13 @@ Rails.application.routes.draw do
   post 'employees/new' => 'employees#create'
   resources :departments
   resources :positions
+  post 'positions/:id/edit' => 'positions#update'
+  post 'positions/new' => 'positions#create'
+    
   resources :leaves
+  post 'leaves/new' => 'leaves#create'
+  post 'leaves/:id/edit' => 'leaves#update'
+  
   resources :claims
   post 'claims/new' => 'claims#create'
     
@@ -101,5 +107,6 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 end
+
 
 

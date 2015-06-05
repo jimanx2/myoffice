@@ -3,7 +3,7 @@ class LeavesController < ApplicationController
     layout 'administrator'
     
     def index
-        @leaves = Leave.all
+        @leave = Leafe.all
         
         respond_to do |format|
             format.html do
@@ -11,6 +11,9 @@ class LeavesController < ApplicationController
         
             format.json do
                 render json: @leaves
+            end
+          
+            format.pdf do
             end
         end
     end
@@ -45,12 +48,17 @@ class LeavesController < ApplicationController
             redirect_to '/leaves'
         end
     end
+  
+    def  new
+        
+    end
+    
      
     
-    def new 
+    def create
         @leave = Leave.new
         
-        @leave.employee_id =   params[:employee_id]
+        @leave.employee_id = params[:employee_id]
         
         @leave.startdate = params[:startdate]
         
