@@ -3,7 +3,7 @@ class SalariesController < ApplicationController
     def index
         @salaries = Salary
         .joins('INNER JOIN employees EMP ON (EMP.id = salaries.employee_id)')
-        .joins('INNER JOIN paymentstat PS ON (PM.id = salaries.employee_id)')
+        .joins('INNER JOIN paymentstat PMS ON (PMS.id = salaries.paymentstat_id)')
         
         respond_to do |format|
             format.html do
