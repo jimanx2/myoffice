@@ -52,3 +52,6 @@ gem 'simple_form'
 
 gem 'prawn', '0.12.0'
 gem 'prawn_rails'
+
+gem 'rmagick'
+gem 'carrierwave'

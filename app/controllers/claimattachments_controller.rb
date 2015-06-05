@@ -1,2 +1,6 @@
 class ClaimattachmentsController < ApplicationController
+  
+  
+  
+  
 end
