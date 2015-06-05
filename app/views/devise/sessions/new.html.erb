@@ -5,7 +5,7 @@
             <p class="alert"><%= alert %></p>
             <p class="notice"><%= notice %></p>
             <div class="account-wall">
-                <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                <img class="profile-img" src="http://cdn.breitbart.com/mediaserver/Breitbart/Big-Hollywood/2013/11/03/spongebomb/spongebob.jpg"
                     alt="">
               <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { :class => 'form-signin'}) do |f| %>
                 <%= f.email_field :email,:class => 'form-control', :placeholder => 'Email' , required: true ,autofocus: true %>
