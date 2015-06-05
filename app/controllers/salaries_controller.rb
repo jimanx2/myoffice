@@ -6,9 +6,18 @@ class SalariesController < ApplicationController
             format.html do
             end
             
+        
+        
+        format.json do
+            render json: @salaries
+        end
+       
+        format.pdf do
         end
         
     end
+end
+    
     
     def show
         
