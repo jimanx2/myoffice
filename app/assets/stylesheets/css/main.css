@@ -666,7 +666,9 @@ aside footer .toggle-sidebar i {
     padding: 0;
   }
 }
-
+.main-content {
+  background: url(/assets/img/bg.png);
+}
 .main-content .content-wrap {
   padding: 15px;
 }
