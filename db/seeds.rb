@@ -25,4 +25,6 @@ Department.create([
     {:name => "Programmer", :code => "DG45"}
     ])
 
+Employee.create([
+    {:name => "Hasmah", :employeenum => "123456", :phonenum => "017-9898965", :email => "saiful@yahoo.com", :address => "semalam punya address", :eligibilityleave => "yes"
 
