@@ -37,9 +37,10 @@
 </table>
   
 <div align="center">
-  <a href="#" class="btn btn-success">Reply</a>
+  <%= link_to 'Reply', reply_issue_path(@issues.id), method: :post, data: {:confirm => "Are you sure?"}, class: "btn btn-success" %>
   
   <%= link_to 'Resolved', resolve_issue_path(@issues.id), method: :post, data: {:confirm => "Are you sure?"}, class: "btn btn-danger" %>
+  
   <a href="/issues" class="btn btn-warning">Cancel</a>
 </div>
 
