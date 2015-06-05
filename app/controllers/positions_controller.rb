@@ -30,6 +30,13 @@ class PositionsController < ApplicationController
         end
     def show 
         @position = Position.find(params[:id])
+        
+      respond_to do |format|
+        format.html
+        format.json do
+          render json: @position
+        end
+      end
     end
     def edit
         @position = Position.find(params[:id])
