@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html class="no-js" lang="">
 
 <head>
@@ -6,11 +7,12 @@
     <meta charset="utf-8">
     <meta name="description" content="Flat, Clean, Responsive, admin template built with bootstrap 3">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <%= csrf_meta_tag %>
     <!-- /meta -->
 
-    <title>i - O f f i c e</title>
+    <title>Cameo | Responsive Admin Dashboard</title>
 
-    <%= stylesheet_link_tag "application" %>
+    <%= stylesheet_link_tag "administrator" %>
     <%= yield :css %>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -24,25 +26,29 @@
 </head>
 
 <!-- body -->
-
 <body>
-    <div class="app boxed box-shadow">
+
+    <div class="app" data-sidebar="locked">
         <!-- top header -->
         <header class="header header-fixed navbar">
 
             <div class="brand">
-                <a href="#" class="fa fa-bars off-left visible-xs" data-toggle="off-canvas" data-move="ltr"></a>
+                <a href="javascript:;" class="fa fa-bars off-left visible-xs" data-toggle="off-canvas" data-move="ltr"></a>
 
-                <a href="#" class="navbar-brand text-white">
+                <a href="index.html" class="navbar-brand">
+                    <i class="fa fa-stop mg-r-sm"></i>
                     <span class="heading-font">
-                        <b>Ruby on Rail</b> 
+                        Cameo<b>ADMIN</b> 
                     </span>
                 </a>
             </div>
 
             <form class="navbar-form navbar-left hidden-xs" role="search">
                 <div class="form-group">
-                    
+                    <button class="btn no-border no-margin bg-none no-pd-l" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <input type="text" class="form-control no-border no-padding search" placeholder="Search Workspace">
                 </div>
             </form>
 
@@ -51,22 +57,146 @@
         <!-- /top header -->
 
         <section class="layout">
+            
+
+            <!-- chat panel -->
+            <aside class="chat-sidebar canvas-right pull-right">
+                <div class="slimscroll" data-height="auto" data-size="6px" data-distance="0">
+
+                    <div class="row text-white pd-md">
+                        <div class="col-xs-8">
+                            <p class="mg-t-xs">Mute notifications</p>
+                        </div>
+                        <div class="col-xs-4">
+                            <input type="checkbox" class="js-switch" checked />
+                        </div>
+                    </div>
+
+                    <b class="center-block text-white pd-md">
+                        Activity feed
+                    </b>
+
+                    <div class="pd-md">
+                        <a href="javascript:;" class="pull-left mg-r-md">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x text-warning"></i>
+                                <i class="fa fa-download fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                        Rose Fournier
+                        <small>Posted on to your wall</small><br>
+                        <small>2 mins ago</small>
+                    </div>
+
+                    <div class="pd-md">
+                        <a href="javascript:;" class="pull-left mg-r-md">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x text-danger"></i>
+                                <i class="fa fa-download fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                        Liviu Cîndea
+                        <small>Shared a photo with you.</small><br>
+                        <small>13 mins ago</small>
+                    </div>
+
+                    <div class="pd-md">
+                        <a href="javascript:;" class="pull-left mg-r-md">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x text-success"></i>
+                                <i class="fa fa-download fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                        Ane Marín
+                        <small>Left the group(HR)</small><br>
+                        <small>4 days ago</small>
+                    </div>
+
+                    <b class="center-block text-white pd-md">
+                        Favourites
+                    </b>
+
+                    <div class="pd-md">
+                        <a href="javascript:;" class="pull-left mg-r-md">
+                            <img src="<%= asset_path('img/faceless.jpg') %>" class="avatar avatar-sm img-circle" alt="">
+                        </a>
+                        <div class="user">
+                            Adi Afrom
+                            <i class="fa fa-circle text-danger pull-right"></i>
+                        </div>
+                        <small>Offline</small>
+                    </div>
+
+                    <div class="pd-md">
+                        <a href="javascript:;" class="pull-left mg-r-md">
+                            <img src="<%= asset_path('img/faceless.jpg') %>" class="avatar avatar-sm img-circle" alt="">
+                        </a>
+                        <div class="user">
+                            Leonie Horn
+                            <i class="fa fa-circle text-danger pull-right"></i>
+                        </div>
+                        <small>Offline</small>
+                    </div>
+
+                    <b class="center-block text-white pd-md">
+                        Friends Online
+                    </b>
+
+                    <div class="pd-md">
+                        <a href="javascript:;" class="pull-left mg-r-md">
+                            <img src="<%= asset_path('img/faceless.jpg') %>" class="avatar avatar-sm img-circle" alt="">
+                        </a>
+                        <div class="user">
+                            Joshua Smart
+                            <i class="fa fa-circle text-warning pull-right"></i>
+                        </div>
+                        <small>is thinking of bananas</small>
+                    </div>
+
+                    <div class="pd-md">
+                        <a href="javascript:;" class="pull-left mg-r-md">
+                            <img src="<%= asset_path('img/faceless.jpg') %>" class="avatar avatar-sm img-circle" alt="">
+                        </a>
+                        <div class="user">
+                            娉 廖
+                            <i class="fa fa-circle text-success pull-right"></i>
+                        </div>
+                        <small>Ready to chat</small>
+                    </div>
+
+                    <div class="pd-md">
+                        <a href="javascript:;" class="pull-left mg-r-md">
+                            <img src="<%= asset_path('img/faceless.jpg') %>" class="avatar avatar-sm img-circle" alt="">
+                        </a>
+                        <div class="user">
+                            Albert Madsen
+                            <i class="fa fa-circle-o text-default pull-right"></i>
+                        </div>
+                        <small>idle</small>
+                    </div>
+                </div>
+            </aside>
+            <!-- /chat panel -->
 
             <!-- main content -->
             <section class="main-content">
 
                 <!-- content wrapper -->
-                <div class="content-wrap no-padding">
-                    <%= yield %>
+                <div class="content-wrap">
+                  <p class="notice"><%= notice %></p>
+                  <p class="alert"><%= alert %></p>
+                <%= yield %>
                 </div>
                 <!-- /content wrapper -->
             </section>
             <!-- /main content -->
+
         </section>
 
     </div>
 
-    <%= javascript_include_tag "application" %>
+  
+    <%= javascript_include_tag "admin" %>
     <%= yield :js %>
 
 </body>
