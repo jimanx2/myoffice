@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     post 'issues/newissue' => 'issues#create'
     post 'issues/:id/edit' => 'issues#update'
     post 'issues/:id/resolved' => 'issues#resolved', :as => 'resolve_issue'
+    post 'issues/:id/reply' => 'issues#reply', :as => 'reply_issue'
   end
   
   
