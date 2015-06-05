@@ -4,7 +4,7 @@ prawn_document() do |pdf|
     pdf.text "Salary Statement" 
   
     
-       @employees = @salaries.each.map do |item| [item.name]
+          @employees = @salaries.each.map do |item| [item.name]
         end
         
         
@@ -31,9 +31,6 @@ prawn_document() do |pdf|
     @employees.unshift ["Address"]
     
     @employees.unshift ["Email"]
-    
-    
-    
     
     
     pdf.table @employees
