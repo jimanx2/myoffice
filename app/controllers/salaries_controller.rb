@@ -12,11 +12,17 @@ class SalariesController < ApplicationController
     
     def show
         
+        
         @employee = Employee.find_by_employeenum(params[:employeenum])
+        
+        
+
         
         
         
     end
-end
+        
+    end
+
 
 
