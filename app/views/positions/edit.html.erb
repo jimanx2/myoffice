@@ -1,6 +1,6 @@
-<h1>Create New Participant: </h1>
+<h1>Update Position: <%= @position.name %></h1>
 <hr>
-<form action="/positions/new" method="post" id="new_form">
+<form action="/positions/<%= @position.id %>/edit" method="post" id="update_form">
     
     <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
     
@@ -8,27 +8,30 @@
         <label class="col -md-4">Name</label>
         <div class="col -md-8">
         <input type="text" name="name"
-            class="form-control" />
+            class="form-control"
+               value= "<%= @position.name %>"/>
         </div>
     </div>
     
     <div class="form-group">
-        <label class="col -md-4">Code Position</label>
+        <label class="col -md-4">Code</label>
         <div class="col -md-8">
         <input type="text" name="code"
-            class="form-control" />
+            class="form-control"
+               value= "<%= @position.code %>"/>
         </div>
     </div>
     <div class="form-group">
-        <label class="col -md-4">Eligibility Leaves</label>
+        <label class="col -md-4">Eligibility Leave</label>
         <div class="col -md-8">
         <input type="text" name="eligibilityleave"
-            class="form-control" />
+            class="form-control"
+               value= "<%= @position.eligibilityleave %>"/>
         </div>
     </div>
     
     <div class="action" align="center">
-        <a href="#" id="btnSubmit" class="btn btn-success">Submit</a>
+        <a href="#" id="btnUpdate" class="btn btn-success">Update</a>
         <a href="/positions/" class ="btn btn-danger">Cancel</a>
     </div>
     </div>
@@ -38,7 +41,7 @@
 
 <% content_for :js do %>
 <script type="text/javascript">
-    $('#btnSubmit').click(function(){ $('#new_form').submit();
+    $('#btnUpdate').click(function(){ $('#update_form').submit();
                                         
                                         
                                         
