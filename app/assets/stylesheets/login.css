@@ -16,5 +16,5 @@
  *= require page
  *= require core
  *= require skin
- *= require bootstrap/css/edit
+ *= require login/styles
  */
