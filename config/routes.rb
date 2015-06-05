@@ -38,6 +38,7 @@ Rails.application.routes.draw do
 
     resources :salaries
     
+    
     resources :employee
     
     controller :salaries do
