@@ -1,0 +1,79 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta name="description" content="Flat, Clean, Responsive, admin template built with bootstrap 3">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <!-- /meta -->
+
+    <title>Cameo | Responsive Admin Dashboard</title>
+
+    <%= stylesheet_link_tag "login" %>
+    <%= yield :css %>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- load modernizer -->
+    <%= javascript_include_tag "modernizr" %>
+</head>
+
+<!-- body -->
+
+<body>
+    <div class="app boxed box-shadow">
+        <!-- top header -->
+        <header class="header header-fixed navbar">
+
+            <div class="brand">
+                <a href="javascript:;" class="fa fa-bars off-left visible-xs" data-toggle="off-canvas" data-move="ltr"></a>
+
+                <a href="index.html" class="navbar-brand text-white">
+                    <i class="fa fa-stop mg-r-sm"></i>
+                    <span class="heading-font">
+                        Cameo<b>ADMIN</b> 
+                    </span>
+                </a>
+            </div>
+
+            <form class="navbar-form navbar-left hidden-xs" role="search">
+                <div class="form-group">
+                    <button class="btn no-border no-margin bg-none no-pd-l" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <input type="text" class="form-control no-border no-padding search" placeholder="Search Workspace">
+                </div>
+            </form>
+
+          <%= render 'shared/user_menu' %>
+        </header>
+        <!-- /top header -->
+
+        <section class="layout">
+
+            <!-- main content -->
+            <section class="main-content">
+
+                <!-- content wrapper -->
+                <div class="content-wrap no-padding">
+                    <%= yield %>
+                </div>
+                <!-- /content wrapper -->
+            </section>
+            <!-- /main content -->
+        </section>
+
+    </div>
+
+    <%= javascript_include_tag "application" %>
+    <%= yield :js %>
+
+</body>
+<!-- /body -->
+
+</html>
