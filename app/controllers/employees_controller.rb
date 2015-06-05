@@ -1,6 +1,6 @@
 class EmployeesController < ApplicationController
-    layout 'administrator'  
-    def index
+  layout 'administrator'
+  def index
         @employees = Employee.all
         
         respond_to do |format| 
@@ -28,6 +28,7 @@ class EmployeesController < ApplicationController
     def update
         @employee = Employee.find(params[:id])
         @employee.name = params[:name]
+        @employee.employeenum = params[:employeenum]
         @employee.department_id = params[:department_id]
         @employee.position_id = params[:position_id]
         @employee.phonenum = params[:phonenum]
@@ -38,6 +39,7 @@ class EmployeesController < ApplicationController
       if @employee.save!
         flash[:info] = "Employee record has been updated!"
         redirect_to '/employees'
+        reditect_to '/employees'
       end
     end
   
@@ -57,6 +59,7 @@ class EmployeesController < ApplicationController
   
   def create
   @employee = Employee.new
+    @employee = Employee.new
     @employee.name = params[:name]
     @employee.employeenum = params[:employeenum]
     @employee.department_id = params[:department_id]

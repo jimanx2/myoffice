@@ -1,0 +1,41 @@
+<h3 class=" col-md-offset-1"><b>Claim Listing</b></h3><hr/>
+<%= 
+    messages = flash.each.map do |msg| msg[1] end 
+    raw messages.join('<br/>')
+%>
+<div class="col-md-12">
+<span class="pull-left col-md-offset-1">
+    <a href="/claims/new" class="btn btn-warning">Add A New Claims</a>
+    
+</span>
+
+<table class="table table-striped col-md-offset-1" border="0">
+<thead>
+    <tr align="center">
+        <th>ID</th>
+        <th>Claim Type</th>
+        <th>Remark</th>
+        <th>Amount</th>
+        <th>Status</th>
+        
+    </tr>
+</thead>
+<tbody>
+    <% @claims.each do |claim| %>
+    <tr>
+        <td><%= claim.id %></td>
+        <td><%= claim.employee_id %></td>
+        <td><%= claim.remark %></td>
+        <td><%= claim.totalclaim %></td>
+        <td><%= claim.approvalstat_id %></td>
+          <td>
+            <a class="btn btn-primary" href="/">View Details</a>
+            <a class="btn btn-info" href="/">Edit</a>
+          </td>
+      
+  
+    </tr>   
+    <% end %>
+</tbody>
+</table>
+</div>

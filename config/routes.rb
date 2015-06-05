@@ -1,28 +1,44 @@
 Rails.application.routes.draw do  
-  devise_for :users
+  devise_for :users,:controllers => {
+    :sessions => "sessions"
+  }
+
   ActiveAdmin.routes(self)
   resources :pages
   root to: 'administrator#index'
   resources :issues
-  post 'issues/newissue' => 'issues#create'
-  post 'issues/:id/edit' => 'issues#update'
-    post 'departments/new' => 'departments#create'
-    post 'departments/:id/edit' => 'departments#update'
+  controller :issues do
+    post 'issues/newissue' => 'issues#create'
+    post 'issues/:id/edit' => 'issues#update'
+    post 'issues/:id/resolved' => 'issues#resolved', :as => 'resolve_issue'
+    post 'issues/:id/reply' => 'issues#reply', :as => 'reply_issue'
+  end
+  
+  
+  post 'departments/new' => 'departments#create'
+  post 'departments/:id/edit' => 'departments#update'
   
   resources :employees
   post 'employees/:id/edit' => 'employees#update'
   post 'employees/new' => 'employees#create'
   resources :departments
   resources :positions
+  post 'positions/:id/edit' => 'positions#update'
+  post 'positions/new' => 'positions#create'
+    
   resources :leaves
+  post 'leaves/new' => 'leaves#create'
+  post 'leaves/:id/edit' => 'leaves#update'
+  
+  resources :claims
+  post 'claims/new' => 'claims#create'
     
-    get 'leaves/index'
-    
-    get 'salaries/index'
-    
-    get 'employee/index'
+  get 'leaves/index'
+  get 'salaries/index'
+  get 'employee/index'
 
     resources :salaries
+    
     
     resources :employee
     
@@ -41,8 +57,11 @@ Rails.application.routes.draw do
     
 
   resources "contacts", only: [:new, :create]
+
   
   resources :public_holidays
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -99,3 +118,6 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 end
+
+
+
