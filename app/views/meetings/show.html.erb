@@ -1,0 +1,72 @@
+<!-- body -->
+
+<body>
+    <div class="app">
+        <section class="layout">
+           
+                     
+                
+         <!-- events sidebar -->
+            <aside class="sidebar-250 bg-white bd-t">
+                <div class="pd-sm">Draggable Events</div>
+                <div class="pd-md">
+                    <div class="external-events" id="external-events">
+                        <div class="external-event label label-color">New Milestone</div>
+                        <div class="external-event label label-primary">Personal Event</div>
+                        <div class="external-event label label-success">Meeting</div>
+                        <div class="external-event label label-info">Recreational</div>
+                        <div class="external-event label label-warning">Task</div>
+                        <div class="external-event label label-danger">Event</div>
+                    </div>
+                    <p>
+                        <input type="checkbox" id="drop-remove">
+                        <label for="drop-remove">remove after drop</label>
+                    </p>
+                </div>
+            </aside>
+           
+            <!-- main content -->
+            <section class="main-content">
+                
+                <div class="content-wrap">
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-white btn-sm no-border" id="calendar-prev">Left</button>
+                                <button type="button" class="btn btn-white btn-sm no-border" id="calendar-next">Middle</button>
+                            </div>
+
+                            <div class="pull-right">
+                                <button type="button" class="btn btn-default btn-sm no-border" id="calendar-today">Left</button>
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-white btn-sm no-border" id="calendar-month">
+                                        <input type="radio" name="options" id="option2">
+                                        <span></span>
+                                    </label>
+                                    <label class="btn btn-white btn-sm no-border" id="calendar-week">
+                                        <input type="radio" name="options" id="option3">
+                                        <span></span>
+                                    </label>
+                                    <label class="btn btn-white btn-sm no-border" id="calendar-day">
+                                        <input type="radio" name="options" id="option4">
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div id="calendar" class="small-white"></div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+               
+         
+
+    </div>
+ <% content_for :js do %>
+    <%= javascript_include_tag "calendar" %>
+    <% end %>
+   
