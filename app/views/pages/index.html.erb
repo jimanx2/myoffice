@@ -1,3 +1,4 @@
+<% content_for :css do %>
 <style type="text/css">
   .nav-button {
     line-height: 2em;
@@ -27,17 +28,12 @@
     padding:5px;
   }
   
-  .body {
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background: url('img/bg.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+  
 }
 </style>
+<% end %>
 
-<body id="body">
+<body>
 <div class="row">
       <section class="panel">
           <div class="panel-body">
@@ -68,7 +64,7 @@
                   </ul>
               </div>
                 
-              <button class="btn btn-danger nav-button col-md-3 btn-margin">CONTACT US</button>
+              <button class="btn btn-danger nav-button col-md-3 btn-margin" ><a href="/contacts/new">CONTACT US</a></button>
               </div>
               </div>
           </div>
