@@ -61,6 +61,8 @@ Rails.application.routes.draw do
 
   
   resources :public_holidays
+    
+  resources :approvalstats
 
 
 
