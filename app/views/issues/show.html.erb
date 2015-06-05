@@ -11,6 +11,12 @@
     <td class="col-md-6"><%= @issues.id %></td>
    </td>
   </tr>
+
+<td class="col-md-4 col-md-offset-2">
+    <label class="col-md-2">Created At</label>
+<td class="col-md-6"><%= @issues.created_at %></td>
+   </td>
+  </tr>
   
     <tr>
 <td class="col-md-4 col-md-offset-2">
@@ -48,10 +54,32 @@
   <a href="/issues" class="btn btn-warning">Cancel</a>
              </div>
 
-
-<% @issues.comments.each do |comment| %>
-<%= comment.remark %>
+<br></br>
+<% @issues.ticketcomments.each do |ticketcomment| %>
+<table class="table table-hovered" border="0" >
+  <thead>
+  <tr>
+    <th>No</th>
+    <th>Date Submitted</th>
+    <th>Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+  
+  <td><%= ticketcomment.issue_id %></td>
+  <td><%= Time.now %></td>
+<td><%= ticketcomment.remark %></td>
+</tr>
+    </tbody>
+</table>
 <% end %>
+
+
+
+
+
+
 <% content_for :js do %>
 <script type="text/javascript">
   $('#btn_reply_form').click(function(){

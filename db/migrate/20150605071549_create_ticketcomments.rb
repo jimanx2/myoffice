@@ -1,6 +1,6 @@
-class CreateComments < ActiveRecord::Migration
+class CreateTicketcomments < ActiveRecord::Migration
   def change
-    create_table :comments do |t|
+    create_table :ticketcomments do |t|
       t.integer :issue_id
       t.integer :employee_id
       t.string :remark

@@ -17,3 +17,4 @@
 /tmp
 schema.rb
 Gemfile.lock
+*.orig
