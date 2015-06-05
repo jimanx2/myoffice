@@ -30,6 +30,12 @@ Rails.application.routes.draw do
   resources :leaves
   post 'leaves/new' => 'leaves#create'
   post 'leaves/:id/edit' => 'leaves#update'
+   
+    #for approvalstatus 
+  resources :approvalstats
+  post 'approvalstats/new' => 'approvalstats#create'
+  post 'approvalstats/:id/edit' => 'approvalstats#update'
+    
   
   resources :claims
   post 'claims/new' => 'claims#create'
@@ -66,7 +72,6 @@ Rails.application.routes.draw do
   
    
   resources  :home
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

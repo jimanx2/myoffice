@@ -83,10 +83,10 @@ end
   
   def reply
     @issues = Issue.find(params[:id])
-    comment = Comment.new
-    comment.employee_id = @issues.assign_id
-    comment.remark = params[:remark]
-    if comment.save! and @issues.comments << comment
+    ticketcomment = Ticketcomment.new
+    ticketcomment.employee_id = @issues.assign_id
+    ticketcomment.remark = params[:remark]
+    if ticketcomment.save! and @issues.ticketcomments << ticketcomment
       flash[:info] = "Issues record has been reply"
       redirect_to "/issues/#{@issues.id}"
     end
