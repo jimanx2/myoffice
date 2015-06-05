@@ -14,8 +14,8 @@ SQL
         )
         .joins('INNER JOIN employees EMP ON (EMP.id = salaries.employee_id)')
         .joins('INNER JOIN paymentstats PMS ON (PMS.id = salaries.paymentstat_id)')
-        .joins('INNER JOIN rates RAT ON (RAT.id = salaries.rate_id)')
         .group('EMP.id')
+        #.joins('INNER JOIN rates RAT ON (RAT.id = salaries.rate_id)')
         
         #
         
@@ -36,11 +36,11 @@ SQL
         end
     end
     
-    
     def show
         @employee = Employee
         .joins('INNER JOIN salaries SAL ON (employees.id = SAL.employee_id)')
         .find_by_employeenum(params[:employeenum])
+        #.joins('INNER JOIN rates RAT ON (SAL.id = RAT.employee_id)')
     end
         
     end

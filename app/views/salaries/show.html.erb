@@ -31,6 +31,14 @@ raw messages.join('<br>')
 <tr>
     <td>Email</td> <td><%= @employee.email %></td>
 </tr>
+    
+<tr>
+    <td>Position</td> <td><%= @employee.position.name %></td>
+</tr>
+    
+<tr>
+    <td>Rate Amount</td> <td><%= @employee.rate.amount %></td>
+</tr>
 <tr>
     <td>Payment Status</td> 
     <td>
