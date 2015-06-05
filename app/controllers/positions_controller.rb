@@ -24,7 +24,7 @@ class PositionsController < ApplicationController
             
             if @position.save!
                 
-                flash[:info] = "Position Record HasBeen Created"
+                flash[:info] = "Position Record Has Been Created"
             redirect_to '/positions'
             end
         end
