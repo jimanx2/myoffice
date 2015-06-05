@@ -3,7 +3,7 @@ class LeavesController < ApplicationController
     layout 'administrator'
     
     def index
-        @leave = Leafe.all
+      @leave = Leafe.all
         
         respond_to do |format|
             format.html do
@@ -20,15 +20,15 @@ class LeavesController < ApplicationController
     
     
     def show 
-        @leave = Leave.find(params[:id])
+      @leave = Leafe.find(params[:id])
     end
     
     def edit 
-        @leave = Leave.find(params[:id])
+      @leave = Leafe.find(params[:id])
     end
     
     def update
-        @leave = Leave.find(params[:id])
+      @leave = Leafe.find(params[:id])
         @leave.startdate = params[:startdate]
         @leave.enddate = params[:enddate]
         @leave.remark = params[:remark]
@@ -41,7 +41,7 @@ class LeavesController < ApplicationController
     end
     
     def destroy
-        @leave = Leave.find(params[:id])
+      @leave = Leafe.find(params[:id])
         
         if @leave.destroy
             flash[:info] = "Leave apply record has been deleted"
@@ -56,7 +56,7 @@ class LeavesController < ApplicationController
      
     
     def create
-        @leave = Leave.new
+      @leave = Leafe.new
         
         @leave.employee_id = params[:employee_id]
         

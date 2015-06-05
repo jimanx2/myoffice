@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     post 'issues/newissue' => 'issues#create'
     post 'issues/:id/edit' => 'issues#update'
     post 'issues/:id/resolved' => 'issues#resolved', :as => 'resolve_issue'
+    post 'issues/:id/reply' => 'issues#reply', :as => 'reply_issue'
   end
   
   
@@ -39,6 +40,7 @@ Rails.application.routes.draw do
 
     resources :salaries
     
+    
     resources :employee
     
     controller :salaries do
@@ -56,6 +58,12 @@ Rails.application.routes.draw do
     
 
   resources "contacts", only: [:new, :create]
+
+  
+  resources :public_holidays
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

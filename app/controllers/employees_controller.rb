@@ -58,16 +58,18 @@ class EmployeesController < ApplicationController
   end
   
   def create
+    #raise params.to_yaml <-- METHOD HOW TO TRACE BUG
   @employee = Employee.new
     @employee = Employee.new
     @employee.name = params[:name]
-    @employee.employeenum = params[:employeenum]
+    @employee.employeenum = Runningnumber.next('employeenum')
     @employee.department_id = params[:department_id]
     @employee.position_id = params[:position_id]
     @employee.phonenum = params[:phonenum]
     @employee.email = params[:email]
     @employee.address = params[:address]
-    @employee.eligibilityleave = params[:eligibilityleave]
+    position = Position.find(params[:position_id])
+    @employee.eligibilityleave = position.eligibilityleave
     
     if @employee.save!
       flash[:info] = "Employee record has been created!"
