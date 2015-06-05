@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   resources :departments
   resources :positions
   resources :leaves
+  post 'leaves/new' => 'leaves#create'
+  post 'leaves/:id/edit' => 'leaves#update'
+  
   resources :claims
   post 'claims/new' => 'claims#create'
     
@@ -105,4 +108,5 @@ Rails.application.routes.draw do
   #   end
 
 
+end
 end
