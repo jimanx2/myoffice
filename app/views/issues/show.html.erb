@@ -1,7 +1,6 @@
 <h1>Details for Ticket: <%= @issues.title %></h1>
 
 <a class="btn btn-warning" href="/issues/" role="button">Back To Issue Lists</a>
-<br></br>
 
 <table class="table table-striped" border="2">
 
@@ -31,17 +30,36 @@
        <tr>
     <td class="col-md-4 col-md-offset-2">
     <label class="col-md-2">Remark</label>
-      <td class="row-md-6"><textarea class="form-control" row="10" class="form-control" ></textarea><%= @issues.remark %></td>
- </td> <br>
+ </td> 
+           <td class="row-md-6">
+             <form action="<%= reply_issue_path(@issues.id)%>"
+    method="post" id="reply_form">
+                      <%= hidden_field_tag 'authenticity_token', form_authenticity_token %>
+             <textarea class="form-control" name="remark" row="10" class="form-control" ><%= @issues.remark %></textarea>
+           </form>
+           </td>
 </tr>
 </table>
-  
-<div align="center">
-  <a href="#" class="btn btn-success">Reply</a>
+  <div align="center">
+  <%= link_to 'Reply', '#', id:'btn_reply_form', class: "btn btn-success" %>
   
   <%= link_to 'Resolved', resolve_issue_path(@issues.id), method: :post, data: {:confirm => "Are you sure?"}, class: "btn btn-danger" %>
+  
   <a href="/issues" class="btn btn-warning">Cancel</a>
-</div>
+             </div>
+
+
+<% @issues.comments.each do |comment| %>
+<%= comment.remark %>
+<% end %>
+<% content_for :js do %>
+<script type="text/javascript">
+  $('#btn_reply_form').click(function(){
+    $('#reply_form').submit();
+  });
+</script>
+<% end %>
+
 
   
 
