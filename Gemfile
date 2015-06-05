@@ -49,4 +49,3 @@ gem 'activeadmin' , github:'activeadmin'
 gem 'mail_form'
 
 gem 'simple_form'
-gem 'rack-raw-upload'
