@@ -54,31 +54,72 @@
   
 </div>
 <!-- BEGIN BOTTOM CONTACTS -->
-          <h2>Our Contacts</h2>
-          <address class="margin-bottom-20">
-            Jalan Pegaga 9C/U12<br>
-            Seksyen U12, 40170 Desa Alam, Selangor<br>
-            Phone no. : 03 8875962<br>
-            Fax no. : 038875962<br>
-            Email : <a href="/cdn-cgi/l/email-protection#e99a9c9999869b9da9888b81c78490"> <span class="__cf_email__" data-cfemail="fe8d8b8e8e918c8abe9f9c96d09387">[email&#160;protected]</span><script cf-   hash='f9e31' type="text/javascript">
-/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/* ]]> */</script></a> | <a href="/cdn-cgi/l/email-protection#157c7b737a5574777d3b786c"> <span class="__cf_email__" data-cfemail="c2abaca4ad82a3a0aaecafbb">[email&#160;protected]</span><script cf-hash='f9e31' type="text/javascript">
-/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/* ]]> */</script></a>
-          </address>
+<div class="row">
+<div class="box">
+<div class="col-lg-12">
+<hr>
+<h2 class="intro-text text-center">Our
+<strong>Contact</strong>
+</h2>
+<hr>
+</div>
+<div class="col-md-8">
+<!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
+<iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
+</div>
+<div class="col-md-4">
+<p>Phone:
+<strong>03-8540123</strong>
+</p>
+<p>Fax:
+<strong>03-8540789</strong>
+</p>
+<p>Email:
+<strong><a href="mailto:name@example.com">iOffice@salamuitm.edu.my</a></strong>
+</p>
+<p>Address:
+<strong>Jalan Pegaga U12/9c, Seksyen U12
+<br>40170,Desa Alam Selangor</strong>
+</p>
+</div>
+<div class="clearfix"></div>
+</div>
+</div>
+
           <!-- END BOTTOM CONTACTS -->
 
 <div class="container">
-  <h1>Send us a message
-  </h1>
-    <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+  <div class="row">
+<div class="box">
+<div class="col-lg-6">
+  <hr>
+<h2 class="intro-text text-center">Feedback
+<strong>form</strong>
+</h2>
+<hr>
 
-    <%= f.input :name, :required => true %>
-    <%= f.input :email, :required => true %>
-    <%= f.input :message, :as => :text, :required => false, :input_html => {:rows => 10} %>
+  <form role="form">
+    <div class="row">
+    <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+   <div class="form-group col-md-4">
+     <%= f.input :name, :required => true, :input_html =>{:cols => 50} %>
+      </div>
+     <div class="form-group col-md-4"> 
+    <%= f.input :email, :required => true, :input_html =>{:cols => 50} %>
+      </div>
+      <div class="form-group col-md-6">
+    <%= f.input :message, :as => :text, :required => false, :input_html => {:rows => 5, :cols =>83} %>
+      </div>
     <div class="hidden">
       <%= f.input :nickname, :hint => 'Leave this field blank!' %>
     </div>
-    <div class="form-actions">
+    <div class="form-actions col-lg-12">
       <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
     </div>
   <% end %>
+    </div>
+  </form>
+  </div>
+    </div>
+</div>
 </div>
