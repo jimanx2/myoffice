@@ -1,23 +1,18 @@
-<h1><center><b>Approval Status</b></center></h1>
-
-</br>
-
+<h1>Approval Status List</h1>
 <%= 
 message = flash.each.map do |msg| msg[1] end 
 raw message.join('<br>')
 
 %>
-
 <span class="pull-right">
     <a class="btn btn-warning"
        href="/approvalstats/new">
         Add Approval Status
     </a>
-
 </span>
 
 
-<table class="table table-bordered" border="5" >
+<table class="table table-bordered" border="2" >
 <thread>
     <tr>
         <th>ID</th>
@@ -33,12 +28,8 @@ raw message.join('<br>')
         <td> <%= approvalstat.id %></td>
         <td> <%= approvalstat.name %></td>
         <td> <%= approvalstat.created_at %></td>
-        <td> <%= approvalstat.updated_at %></td> 
+        <td> <%= approvalstat.updated_at %></td>
         <td>
-       
-            <a class="btn btn-info" href="/approvalstats/<%= approvalstat.id %>">
-            View Details
-            </a>
             <a class="btn btn-success" href="/approvalstats/<%= approvalstat.id %>/edit">
             Edit
             </a>
@@ -53,6 +44,10 @@ raw message.join('<br>')
     <% end %>
     
     </tbody>
+    
+
+
+
 
 
 </table>

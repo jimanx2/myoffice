@@ -1,4 +1,6 @@
 class ApprovalStatsController < ApplicationController
+    
+    
     layout 'administrator'
     
     def index
@@ -8,7 +10,7 @@ class ApprovalStatsController < ApplicationController
             format.html do
             end
             format.json do 
-                render json: @approvalstat
+                render json: @approvalstats
             end
             
         end 
@@ -18,7 +20,6 @@ class ApprovalStatsController < ApplicationController
         def create
             @approvalstat = Approvalstat.new
             @approvalstat.name = params[:name]
-            
             if @approvalstat.save!
                 
                 flash[:info] = "Approval Status Record Has Been Created"
@@ -49,10 +50,4 @@ class ApprovalStatsController < ApplicationController
             redirect_to '/approvalstats'
         end 
     end
-    
-end
-
-    
-    
-    
 end
