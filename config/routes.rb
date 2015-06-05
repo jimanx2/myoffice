@@ -33,15 +33,17 @@ Rails.application.routes.draw do
     post 'salaries/:id/edit' => 'salaries#update'
     post 'salaries/new' => 'salaries#create'
   
-<<<<<<< HEAD
+
   #GET, POST, PUT, PATCH, DELETE
   resources :leavetypes
     post 'leavetypes/:id/edit' => 'leavetypes#update'
     post 'leavetypes/new' => 'leavetypes#create'
     
-=======
+
   resources "contacts", only: [:new, :create]
->>>>>>> 6466d689f83cb36ec4f44b0e69d2965265e4ef33
+  
+  resources :public_holidays
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
