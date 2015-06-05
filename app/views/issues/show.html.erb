@@ -49,9 +49,16 @@
              </div>
 
 
-<% @issues.comments.each do |comment| %>
-<%= comment.remark %>
+<% @issues.ticketcomments.each do |ticketcomment| %>
+<%= ticketcomment.employee_id %>
+<%= ticketcomment.remark %>
 <% end %>
+
+
+
+
+
+
 <% content_for :js do %>
 <script type="text/javascript">
   $('#btn_reply_form').click(function(){
