@@ -1,5 +1,8 @@
 <h1>Details for Ticket: <%= @issues.title %></h1>
 
+<a class="btn btn-warning" href="/issues/" role="button">Back To Issue Lists</a>
+<br></br>
+
 <table class="table table-striped" border="2">
 
   <tr>
@@ -27,7 +30,7 @@
 
        <tr>
     <td class="col-md-4 col-md-offset-2">
-    <label class="col-md-2">Comment</label>
+    <label class="col-md-2">Remark</label>
       <td class="row-md-6"><textarea class="form-control" row="10" class="form-control" ></textarea><%= @issues.remark %></td>
  </td> <br>
 </tr>
@@ -35,10 +38,13 @@
   
 <div align="center">
   <a href="#" class="btn btn-success">Reply</a>
-   <a href="#" class="btn btn-danger">Resolved</a>
+  
+  <%= link_to 'Resolved', resolve_issue_path(@issues.id), method: :post, data: {:confirm => "Are you sure?"}, class: "btn btn-danger" %>
+  <a href="/issues" class="btn btn-warning">Cancel</a>
 </div>
 
   
+
   
 
 

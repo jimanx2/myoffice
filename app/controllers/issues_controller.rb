@@ -22,9 +22,7 @@ class IssuesController < ApplicationController
           @issues = Issue.find(params[:id])
   end 
       
-  before_action :require_login
-  private
-  def require_login
+  
   def new
         
     end
@@ -71,7 +69,17 @@ end
       redirect_to '/issues'
         end
     end
-  end 
+  
+  
+  def resolved
+     @issues = Issue.find(params[:id])
+    @issues.issuestat = Issuestat.find_by_status("Resolved")
+    if @issues.save!
+            
+      flash[:info] = "Issues record has been resolved"
+          redirect_to '/issues'
+        end
+  end
    
         
 end

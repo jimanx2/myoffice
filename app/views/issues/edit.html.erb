@@ -1,5 +1,8 @@
+
 <h1>Update Issue: <%= @issues.id %></h1>
 
+<a class="btn btn-warning" href="/issues/" role="button">Back To Issue Lists</a>
+<br></br>
 <div>
 <form action="/issues/<%= @issues.id %>/edit"
     method="post" id="update_form">
