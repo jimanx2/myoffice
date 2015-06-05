@@ -1,5 +1,74 @@
+
+<style type="text/css">
+  .nav-button {
+    line-height: 2em;
+  }
+  .btn-group {
+    padding: 0 !important; 
+  }
+  .btn-margin {
+    margin-left: 2px;
+    margin-right: 2px;
+    width: 23%;
+  }
+</style>
+<div class="row">
+      <section class="panel">
+          <div class="panel-body">
+            <div class="col-lg-12">
+              <div class="demo-button text-center col-lg-10 col-lg-offset-1">
+                  <!-- Standard button -->
+                  <button class="btn btn-danger nav-button col-md-3 btn-margin">HOME</button>
+                  <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                  <button type="button" class="btn btn-primary nav-button col-md-3 btn-margin">ABOUT</button>
+                  <!-- Indicates a successful or positive action -->
+                  
+                <div class="btn-group show-on-hover col-md-3 btn-margin">
+                  <button type="button" class="btn btn-success dropdown-toggle col-md-12  nav-button" data-toggle="dropdown">TEAM
+                      <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                      <li>
+                          <a href="javascript:;">Finance Management</a>
+                      </li>
+                      <li>
+                          <a href="javascript:;">Human Resource Management</a>
+                      </li>
+                      <li>
+                          <a href="javascript:;">Task Management</a>
+                      </li>
+                      <li class="divider"></li>
+                      
+                  </ul>
+              </div>
+                
+              
+                 <button class="btn btn-danger nav-button col-md-12 btn-margin" ><a href="#">CONTACT US</a>
+                      
+                  </button>
+             
+              </div>
+              </div>
+          </div>
+      </section>
+  
+</div>
+<!-- BEGIN BOTTOM CONTACTS -->
+          <h2>Our Contacts</h2>
+          <address class="margin-bottom-20">
+            Jalan Pegaga 9C/U12<br>
+            Seksyen U12, 40170 Desa Alam, Selangor<br>
+            Phone no. : 03 8875962<br>
+            Fax no. : 038875962<br>
+            Email : <a href="/cdn-cgi/l/email-protection#e99a9c9999869b9da9888b81c78490"> <span class="__cf_email__" data-cfemail="fe8d8b8e8e918c8abe9f9c96d09387">[email&#160;protected]</span><script cf-   hash='f9e31' type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/* ]]> */</script></a> | <a href="/cdn-cgi/l/email-protection#157c7b737a5574777d3b786c"> <span class="__cf_email__" data-cfemail="c2abaca4ad82a3a0aaecafbb">[email&#160;protected]</span><script cf-hash='f9e31' type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/* ]]> */</script></a>
+          </address>
+          <!-- END BOTTOM CONTACTS -->
+
 <div class="container">
-  <h1>Contact</h1>
+  <h1>Send us a message
+  </h1>
     <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
 
     <%= f.input :name, :required => true %>
