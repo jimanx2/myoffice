@@ -1,5 +1,8 @@
+
 <h1>Update Issue: <%= @issues.id %></h1>
 
+<a class="btn btn-warning" href="/issues/" role="button">Back To Issue Lists</a>
+<br></br>
 <div>
 <form action="/issues/<%= @issues.id %>/edit"
     method="post" id="update_form">
@@ -17,10 +20,11 @@
 <div class="form-group">
     <label class="col-md-4" align="center">Issue Description</label>
     <div class="col-md-8">
-    <input type="text" name="description"
-           class="form-control" value="<%= @issues.description %>"/>
+    <textarea class="form-control" name="description"
+           row="100" value="<%= @issues.description %>"></textarea>
         </div>
     </div>
+  
     
     
 <div class="action" align="center">

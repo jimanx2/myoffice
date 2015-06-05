@@ -1,1 +1,55 @@
 <h1>Department Listing<h1>
+
+<%=
+    messages = flash.each.map do |msg| msg[1]
+    end
+    raw messages.join('<br/>')
+    %>
+    
+<span class="pull-right">
+    <a class="btn btn-warning"
+       href="/departments/new">
+        Add New Department
+    </a>
+</span>    
+    
+<table class="table table-stripad" border="0">
+<thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Code</th>
+        <th>Action</th>
+    </tr>
+</thead>
+    
+<tbody>
+    
+    <% @departments.each do |department| %>
+    
+    <tr>
+        <td><%= department.id%></td>
+        <td><%= department.name%></td>
+        <td><%= department.code%></td>
+        
+        <td>
+            <a class="btn btn-info"
+               href="/departments/<%= department.id%>">
+                View
+            </a>
+            <a class="btn btn-success"
+               href="/departments/<%= department.id%>/edit">
+                Edit
+            </a>
+            
+            <%= link_to 'Remove', department,
+                method: :delete,
+                class: "btn btn-danger",
+                data: {Confirm: 'Are you sure?'}
+            %>          
+       
+        </td>    
+    </tr>
+    <% end %>
+</tbody>
+</table>

@@ -1,6 +1,6 @@
 class IssuesController < ApplicationController
   layout 'administrator'
-  before_action :authenticate_user!
+  
   def index
     @issues = Issue.all || []
       respond_to do |format|
@@ -17,8 +17,12 @@ class IssuesController < ApplicationController
           
       end
   end
+  
+  def show
+          @issues = Issue.find(params[:id])
+  end 
       
-    
+  
   def new
         
     end
@@ -36,9 +40,7 @@ class IssuesController < ApplicationController
         
     end
     
-  def show
-          @issues = Issue.find(params[:id])
-  end  
+   
     
     
     def edit
@@ -67,7 +69,26 @@ end
       redirect_to '/issues'
         end
     end
-    
+  
+  
+  def resolved
+     @issues = Issue.find(params[:id])
+    @issues.issuestat = Issuestat.find_by_status("Resolved")
+    if @issues.save!
+            
+      flash[:info] = "Issues record has been resolved"
+          redirect_to '/issues'
+        end
+  end
+  
+  def reply
+     @issues = Issue.find(params[:id])
+    if @issues.save!
+            
+      flash[:info] = "Issues record has been reply"
+      redirect_to "/issues/#{@issues.id}"
+        end
+  end
    
         
 end

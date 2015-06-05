@@ -6,17 +6,32 @@ class SalariesController < ApplicationController
             format.html do
             end
             
+        
+        
+        format.json do
+            render json: @salaries
+        end
+       
+        format.pdf do
         end
         
     end
+end
+    
     
     def show
+        
         
         @employee = Employee.find_by_employeenum(params[:employeenum])
         
         
+
+        
+        
         
     end
-end
+        
+    end
+
 
 

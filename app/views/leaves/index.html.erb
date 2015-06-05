@@ -27,29 +27,31 @@ raw message.join('<br>')
 </thead>
     
 <tbody>
-    <!-- we'll use .each to iterate each participant -->
-    <% @leaves.each do |leave| %>
+    <!-- we'll use .each to iterate each leave -->
+    <% @leave.each do |leafe| %>
     <tr>
-        <td><%= leaves.id %></td>
-        <td><%= leaves.employee_id %>             </td>
-        <td><%= leaves.startdate %></td>
-        <td><%= leaves.approveby_id %>           </td>
-        <td><%= leaves.approvalstat_id %>         </td>
-        <td><%= leaves.leavetype_id %>           </td>
+        <td><%= leafe.id %></td>
+        <td><%= leafe.employee_id %></td>
+        <td><%= leafe.startdate %></td>
+        <td><%= leafe.enddate %></td>
+        <td><%= leafe.remark %></td>
+        <td><%= leafe.approveby_id %></td>
+        <td><%= leafe.approvalstat_id %></td>
+        <td><%= leafe.leavetype_id %></td>
         
         <td>
-        <a class="btn btn-info" href="/leaves/<%=leave.id%>">
+        <a class="btn btn-info" href="/leaves/<%=leafe.id%>">
                 View
         </a>
             
-        <a class="btn btn-success" href="/leaves/<%=leave.id%>/edit">
+        <a class="btn btn-success" href="/leaves/<%=leafe.id%>/edit">
                 Edit
         </a>
             
-            <%= link_to 'Delete', leaves,
+          <%= link_to 'DELETE', leafe,
                 method: :delete,
                 class: "btn btn-danger",
-                data: {confirm: 'Are you           sure?'} %>
+                data: {confirm: 'Are you sure?'} %>
             
         </td>
     </tr>

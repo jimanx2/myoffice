@@ -1,21 +1,56 @@
-<h1>Salary Statement : </h1>
+<h1>Salary Statement : <%= @employee.name %></h1>
+
+<%= 
+messages = flash.each.map do |msg| msg[1] end
+raw messages.join('<br>')
+%>
+
 <hr/>
+
+<table class = "table table-striped" border="3" cellpadding = "10">
+<thead>
+    
+<tr>
+    <td>Name</td> <td><%= @employee.name %></td>
+</tr>      
+    
+<tr>
+    <td>Employee Number</td> <td><%= @employee.employeenum %></td>
+</tr>  
+    
+<tr>
+    <td>Mobile Phone</td> <td><%= @employee.phonenum %></td>
+</tr>
+    
+<tr>
+    <td>Address</td> <td><%= @employee.address %></td>
+</tr>
+    
+<tr>
+    <td>Email</td> <td><%= @employee.email %></td>
+</tr>
+    
+ 
+    
+
+    
+    
+
+    
+    
+</thead>
+    
 <br/><br/>
-<div class = "row">
-    <div class = "col-md-8 col-md-offset-2">
-    <label class = "col-md-4">Name</label>
-    <div class = "col-md-6"><%= @employee.name %></div>
-    </div>
     
-    <label class = "col-md-4">Address</label>
-    <div class = "col-md-6"><%= @employee.address %></div>
-    </div>
-
-<label class = "col-md-4">Name</label>
-<div class = "col-md-6"><%= @employee.salary.try :rate_id %></div>
-    </div>
-    
-    
-</div>
 
 
+
+
+</table>
+
+<span class = "pull-right">
+    <a class = "btn btn-warning"
+       href = "/salaries/index.pdf" >
+    PRINT STATEMENT PDF
+    </a>
+</span>

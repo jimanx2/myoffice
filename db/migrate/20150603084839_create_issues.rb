@@ -6,7 +6,7 @@ class CreateIssues < ActiveRecord::Migration
         t.integer :issueby_id
         t.integer :assign_id
         t.string :action
-        t.string :remark
+        
 
       t.timestamps null: false
     end

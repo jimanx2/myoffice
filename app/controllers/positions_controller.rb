@@ -1,6 +1,6 @@
 class PositionsController < ApplicationController
     
-    
+    layout 'administrator'
     def index
         @position = Position.all
         
@@ -24,12 +24,19 @@ class PositionsController < ApplicationController
             
             if @position.save!
                 
-                flash[:info] = "Position Record HasBeen Created"
+                flash[:info] = "Position Record Has Been Created"
             redirect_to '/positions'
             end
         end
     def show 
         @position = Position.find(params[:id])
+        
+      respond_to do |format|
+        format.html
+        format.json do
+          render json: @position
+        end
+      end
     end
     def edit
         @position = Position.find(params[:id])

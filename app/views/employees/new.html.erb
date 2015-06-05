@@ -1,0 +1,104 @@
+<h3 class="col-md-5 col-md-offset-2">Create New Employee</h3>
+<hr/><hr/><hr/><hr/>
+<form id="new_form" action="/employees/new" method="post">
+    <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
+  
+    <div class="form-group col-md-5 col-md-offset-2">
+        <label class="col-md-3">Employee ID</label>
+        <div class="col-md-4">
+          <label><%= Runningnumber.fetch('employeenum') %></label>
+        <input type="hidden" name="employeenum" 
+               class="form-control"
+               value="<%= Runningnumber.fetch('employeenum') %>"/>
+        </div>
+      <div class="col-md-5"></div>
+    </div>
+    
+    <div class="form-group col-md-5 col-md-offset-2">
+        <label class="col-md-3">Name</label>
+        <div class="col-md-9">
+        <input type="text" name="name" 
+               class="form-control" placeholder="Employee Name"/>
+        </div>
+    </div>
+    
+    <div class="form-group col-md-5 col-md-offset-2">
+        <label class="col-md-3">Department</label>
+        <div class="col-md-5">
+        <select name="department_id" class="form-control selectpicker" readonly="readonly">
+          <% Department.all.each do |department| %>
+          <option value="<%= department.id %>"><%= department.name %></option>
+          <% end %>
+        </select>
+        </div>
+      <div class="col-md-7"></div>
+    </div>
+    
+    <div class="form-group col-md-5 col-md-offset-2">
+        <label class="col-md-3">Position</label>
+        <div class="col-md-5">
+        <select id="positionid" name="position_id" class="form-control selectpicker" readonly="readonly">
+          <% Position.all.each do |position| %>
+          <option value="<%= position.id %>"><%= position.name %></option>
+          <% end %>
+        </select>
+        </div>
+      <div class="col-md-7"></div>
+    </div>
+    
+    <div class="form-group col-md-5 col-md-offset-2">
+        <label class="col-md-3">Contact No</label>
+        <div class="col-md-4">
+        <input type="text" name="phonenum" 
+               class="form-control" placeholder="+6013-9888984"/>
+        </div>
+        <div class="col-md-5"></div>
+    </div>
+      
+    <div class="form-group col-md-5 col-md-offset-2">
+        <label class="col-md-3">Email</label>
+        <div class="col-md-9">
+        <input type="email" name="email" 
+               class="form-control" placeholder="example@example.com"/>
+        </div>
+    </div>
+      
+    <div class="form-group col-md-5 col-md-offset-2">
+        <label class="col-md-3">Address</label>
+        <div class="col-md-9">
+        <textarea row="4" col="100" type="text" name="address" 
+               class="form-control" placeholder="Employee Address"></textarea>
+        </div>
+    </div>
+      
+    <div class="form-group col-md-5 col-md-offset-2">
+        <label class="col-md-3">Eligibility Leave</label>
+        <div class="col-md-3">
+        <input id="eligibilityleave" type="text" name="eligibilityleave" 
+               class="form-control" readonly="readonly"/>
+        </div>
+        <div class="col-md-6 col-md-offset-0"></div>
+    </div>
+    
+    <div class="form-group col-md-10 col-md-offset-3">
+    <div class="action col-md-8">
+        <a href="#" id="btnSubmit" class="btn btn-success">CREATE</a>
+        <a href="/employees" class="btn btn-danger">CANCEL</a>
+    </div>
+  </div>
+</form>
+    
+    <% content_for :js do %>
+    <script type="text/javascript">
+        $('#btnSubmit').click(function(){
+            $('#new_form').submit();
+        });
+      
+        $('#positionid').change(function(){
+          var $select = $(this).get(0);
+          $.getJSON('/positions/'+$select.value+'.json', function(data){
+            $('#eligibilityleave').val(data.eligibilityleave);
+          });
+        });
+    </script>
+    <% end %>

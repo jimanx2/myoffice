@@ -1,9 +1,9 @@
-ActiveAdmin.register Salary do
+ActiveAdmin.register Position do
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-    permit_params :id, :rate_id, :date, :paymenttype_id, :paymentstat_id, :created_at, :updated_at
+    permit_params :id, :name, :code, :eligibilityleave, :created_at, :updated_at
 #
 # or
 #
